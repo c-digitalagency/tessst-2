@@ -14,11 +14,12 @@
       padding: 0;
       background-color: #f5f5f5;
       color: #333;
-      line-height: 1.6;
+      line-height: 1.7;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      font-size: 18px;
     }
     header {
       background-color: #0073e6;
@@ -29,31 +30,33 @@
     }
     h1 {
       margin: 0;
-      font-size: 28px;
+      font-size: 32px;
+      line-height: 1.2;
     }
     .subtitle {
-      font-size: 16px;
+      font-size: 20px;
       margin-top: 10px;
       font-weight: 300;
     }
     .offer {
       background-color: #ffeb3b;
       color: #000;
-      padding: 15px;
+      padding: 20px;
       text-align: center;
-      font-size: 18px;
+      font-size: 20px;
       margin: 20px auto;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      max-width: 90%;
+      max-width: 600px;
+      width: 90%;
     }
     .klaviyo-form-TBJhA4 {
       display: flex;
       justify-content: center;
       padding: 20px;
       margin: 0 auto;
-      max-width: 90%;
-      width: 100%;
+      max-width: 600px;
+      width: 90%;
     }
     .benefits {
       margin: 40px 20px;
@@ -62,7 +65,7 @@
       width: 90%;
     }
     .benefits h2 {
-      font-size: 24px;
+      font-size: 28px;
       margin-bottom: 20px;
     }
     .benefits ul {
@@ -70,10 +73,10 @@
       padding: 0;
       margin: 0;
       text-align: left;
+      font-size: 20px;
     }
     .benefits li {
       margin-bottom: 20px;
-      font-size: 16px;
       display: flex;
       align-items: center;
     }
@@ -102,7 +105,7 @@
       color: #fff;
       padding: 20px;
       text-align: center;
-      font-size: 14px;
+      font-size: 16px;
       width: 100%;
       box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
       margin-top: auto;
@@ -117,40 +120,54 @@
 
     /* Media Queries */
     @media (max-width: 768px) {
+      body {
+        font-size: 16px;
+      }
       h1 {
-        font-size: 24px;
+        font-size: 28px;
       }
       .subtitle {
-        font-size: 14px;
+        font-size: 18px;
       }
       .offer {
-        font-size: 16px;
+        font-size: 18px;
         margin: 20px 10px;
+        padding: 15px;
       }
       .benefits h2 {
-        font-size: 20px;
+        font-size: 24px;
       }
-      .benefits li {
-        font-size: 14px;
+      .benefits ul {
+        font-size: 18px;
+      }
+      .benefits li::before {
+        margin-right: 8px;
       }
     }
 
     @media (max-width: 480px) {
+      body {
+        font-size: 14px;
+      }
       h1 {
-        font-size: 20px;
+        font-size: 24px;
       }
       .subtitle {
-        font-size: 12px;
+        font-size: 16px;
       }
       .offer {
-        font-size: 14px;
+        font-size: 16px;
         margin: 15px 10px;
+        padding: 12px;
       }
       .benefits h2 {
-        font-size: 18px;
+        font-size: 20px;
       }
-      .benefits li {
-        font-size: 12px;
+      .benefits ul {
+        font-size: 16px;
+      }
+      .benefits li::before {
+        margin-right: 6px;
       }
     }
   </style>
@@ -196,4 +213,3 @@
 
 </body>
 </html>
-
