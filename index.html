@@ -1,23 +1,27 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
   <base href="https://c-digitalagency.com/">
-  <title>Boostez votre visibilité en ligne | C-Digital Agency</title>
-  <meta name="description" content="Nous aidons les entreprises à améliorer leur visibilité en ligne, augmenter leur trafic et booster leurs ventes grâce à des stratégies digitales efficaces.">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nous aidons les entreprises à améliorer leur visibilité en ligne, augmenter leur trafic et booster leurs ventes grâce à des stratégies digitales efficaces.">
+  <title>Boostez votre visibilité en ligne | C-Digital Agency</title>
   
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #000;
-      color: #fff;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
     }
     header {
-      background-color: #000;
+      background-color: #0073e6;
       padding: 20px;
       text-align: center;
+      color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     h1 {
       margin: 0;
@@ -26,47 +30,71 @@
     .subtitle {
       font-size: 24px;
       margin-top: 10px;
+      font-weight: 300;
     }
     .offer {
-      background-color: #ff0;
+      background-color: #ffeb3b;
       color: #000;
-      padding: 10px;
+      padding: 15px;
       text-align: center;
-      font-size: 20px;
-      margin: 30px 0;
+      font-size: 22px;
+      margin: 30px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     form {
       max-width: 400px;
-      margin: 0 auto;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     input, button {
       display: block;
       width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
       font-size: 18px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
     }
     button {
-      background-color: #ff0;
-      color: #000;
+      background-color: #0073e6;
+      color: #fff;
       border: none;
       cursor: pointer;
+      transition: background-color 0.3s ease;
       font-weight: bold;
     }
+    button:hover {
+      background-color: #005bb5;
+    }
     .benefits {
-      margin: 40px 0;
+      margin: 60px 20px;
     }
     .benefits h2 {
       text-align: center;
       font-size: 36px;
+      margin-bottom: 20px;
     }
     .benefits ul {
       list-style: none;
       padding: 0;
+      max-width: 800px;
+      margin: 0 auto;
     }
     .benefits li {
-      margin-bottom: 10px;
-      font-size: 18px;
+      margin-bottom: 20px;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .benefits li::before {
+      content: '✔';
+      color: #0073e6;
+      font-weight: bold;
+      margin-right: 15px;
     }
     .visuals {
       display: flex;
@@ -76,49 +104,61 @@
     .visual img {
       max-width: 100%;
       height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     footer {
-      background-color: #222;  
+      background-color: #0073e6;  
       color: #fff;
-      padding: 10px;
+      padding: 20px;
       text-align: center;
       font-size: 14px;
+      margin-top: 40px;
+      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    }
+    footer a {
+      color: #ffeb3b;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>C-Digital Agency</h1>
-    <div class="subtitle">Boostez votre visibilité en ligne</div>
+    <div class="subtitle">Transformez votre présence en ligne aujourd'hui</div>
   </header>
   
   <div class="offer">
-    Obtenez un audit gratuit de votre site en échange de votre email
+    Inscrivez-vous pour un audit gratuit et découvrez comment faire passer votre entreprise au niveau supérieur.
   </div>
   
   <form action="submit-email.php" method="post">
-    <input type="text" name="name" placeholder="Votre nom" required>  
-    <input type="email" name="email" placeholder="Votre email" required>
+    <input type="text" name="name" placeholder="Votre nom complet" required>  
+    <input type="email" name="email" placeholder="Votre adresse email" required>
     <button type="submit">Recevoir mon audit gratuit</button>
   </form>
   
   <div class="benefits">
-    <h2>Bénéfices</h2>
+    <h2>Pourquoi choisir C-Digital Agency ?</h2>
     <ul>
-      <li>Augmentez votre trafic organique qualifié</li>
-      <li>Boostez vos ventes et conversions en ligne</li> 
-      <li>Renforcez la notoriété de votre marque</li>
+      <li><strong>Augmentez votre visibilité en ligne :</strong> Faites briller votre entreprise sur le web.</li>
+      <li><strong>Gagnez la confiance de vos clients :</strong> Renforcez la crédibilité et la notoriété de votre marque.</li>
+      <li><strong>Boostez vos ventes :</strong> Transformez vos visiteurs en clients fidèles.</li>
+      <li><strong>Support dédié :</strong> Bénéficiez d'un accompagnement personnalisé à chaque étape.</li>
     </ul>
   </div>
    
   <div class="visuals">
     <div class="visual">
-      <img src="Gagnez plus de clients développer votre entreprise (1).gif" alt="Gagnez plus de clients">
+      <img src="Gagnez plus de clients développer votre entreprise (1).gif" alt="Boostez votre entreprise">
     </div>
   </div>
   
   <footer>
-    &copy; 2023 C-Digital Agency
+    &copy; 2023 C-Digital Agency | <a href="https://c-digitalagency.com/">Visitez notre site</a> | <a href="mailto:christophe@c-digitalagency.com">Contactez-nous</a>
   </footer>
 </body>
 </html>
