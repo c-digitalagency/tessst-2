@@ -28,19 +28,22 @@
     }
     h1 {
       margin: 0;
-      font-size: 36px;
+      font-size: 48px;
+      color: #ffeb3b;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     }
     .subtitle {
       font-size: 18px;
       margin-top: 10px;
       font-weight: 300;
+      color: #ffffff;
     }
     .offer {
       background-color: #ffeb3b;
       color: #000;
-      padding: 15px;
+      padding: 20px;
       text-align: center;
-      font-size: 20px;
+      font-size: 22px;
       margin: 20px auto;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -50,7 +53,7 @@
       display: flex;
       justify-content: center;
       padding: 20px;
-      margin: 0 auto;
+      margin: 0 auto 40px auto;
       max-width: 600px;
       width: 100%;
       box-sizing: border-box;
@@ -73,15 +76,46 @@
     .visuals {
       display: flex;
       justify-content: center;
-      margin-bottom: 40px;
+      margin: 30px auto 20px auto;
       flex-wrap: wrap;
+      position: relative;
+      max-width: 600px;
     }
     .visual img {
       max-width: 100%;
       height: auto;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      margin: 10px;
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      width: 30px;
+      height: 30px;
+      background-color: #ffeb3b;
+      clip-path: polygon(100% 50%, 0 0, 0 100%);
+    }
+    .arrow-left {
+      left: 10px;
+      transform: translateY(-50%) rotate(180deg);
+    }
+    .arrow-right {
+      right: 10px;
+      transform: translateY(-50%);
+    }
+
+    @media (max-width: 768px) {
+      .arrow {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .arrow {
+        width: 15px;
+        height: 15px;
+      }
     }
 
     .benefits {
@@ -133,7 +167,7 @@
     /* Media Queries */
     @media (max-width: 768px) {
       h1 {
-        font-size: 28px;
+        font-size: 36px;
       }
       .subtitle {
         font-size: 16px;
@@ -152,7 +186,7 @@
 
     @media (max-width: 480px) {
       h1 {
-        font-size: 24px;
+        font-size: 28px;
       }
       .subtitle {
         font-size: 14px;
@@ -183,9 +217,11 @@
   
   <!-- Section visuelle placée sous l'offre -->
   <div class="visuals">
+    <div class="arrow arrow-left"></div>
     <div class="visual">
-      <img src="Gagnez plus de clients développer votre entreprise (1).gif" alt="Animation of business growth" width="600" height="400">
+      <img src="Gagnez plus de clients développer votre entreprise (1).gif" alt="Animation of business growth">
     </div>
+    <div class="arrow arrow-right"></div>
   </div>
   
   <!-- Klaviyo Form -->
