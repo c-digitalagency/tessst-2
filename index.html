@@ -43,9 +43,7 @@
 
     .main-content {
       display: flex;
-      height: 100vh;
-      justify-content: center;
-      align-items: center;
+      justify-content: flex-end; /* Aligne le contenu à droite sur les grands écrans */
       padding: 20px;
       text-align: center;
     }
@@ -59,10 +57,10 @@
     }
 
     .content {
-      max-width: 100%;
+      max-width: 800px; /* Limite la largeur du contenu */
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: center; /* Centre horizontalement les éléments à l'intérieur */
       background-color: rgba(0, 0, 0, 0.8);
       padding: 20px;
       border-radius: 8px;
@@ -101,6 +99,7 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       color: #ffffff;
       margin-bottom: 20px;
+      text-align: center; /* Centre le texte à l'intérieur du formulaire */
     }
 
     .form-container h2 {
@@ -168,7 +167,7 @@
     @media (max-width: 768px) {
       .main-content {
         flex-direction: column;
-        align-items: center;
+        align-items: center; /* Centre le contenu sur mobile */
       }
 
       .image-container {
@@ -177,8 +176,6 @@
 
       .content {
         max-width: 100%;
-        margin-right: 0;
-        margin-top: 20px;
         padding: 20px;
         background-color: #000; /* Maintient l'arrière-plan noir pour un bon contraste */
       }
@@ -224,10 +221,10 @@
   </header>
 
   <div class="main-content">
-    <!-- Image à gauche -->
+    <!-- Image à gauche sur bureau -->
     <div class="image-container"></div>
 
-    <!-- Contenu centré -->
+    <!-- Contenu à droite -->
     <div class="content">
       <div class="offer-price">
         PRIX = <del>47€</del> Offert à durée limitée
