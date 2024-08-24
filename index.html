@@ -41,25 +41,31 @@
       color: #ffffff;
     }
 
-    .content {
+    .main-content {
       display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding: 150px 0 0 0; /* Augmenté pour éviter le chevauchement avec le header */
       height: 100vh;
+    }
+
+    .image-container {
+      flex: 1;
       background-image: url('Photo C-Digital Agency.PNG');
       background-size: cover;
       background-repeat: no-repeat;
-      background-position: left center;
+      background-position: center center;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 40px;
+      text-align: center;
     }
 
     .right-content {
-      max-width: 50%;
-      background-color: rgba(0, 0, 0, 0.8);
-      padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      margin-right: 5%;
+      max-width: 90%;
       text-align: center;
     }
 
@@ -75,9 +81,7 @@
     }
 
     .gif-container {
-      width: 100%;
       margin-bottom: 20px;
-      text-align: center;
     }
 
     .gif-container img {
@@ -159,17 +163,15 @@
     }
 
     @media (max-width: 768px) {
-      .content {
+      .main-content {
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        background-image: none;
-        background-color: #000000;
-        padding-top: 20px;
-        height: auto;
       }
 
-      .right-content {
+      .image-container {
+        height: 200px; /* Réduire la taille de l'image sur mobile */
+      }
+
+      .content {
         max-width: 100%;
         margin-right: 0;
         margin-top: 20px;
@@ -211,23 +213,30 @@
     <div class="subtitle">Transformez votre présence en ligne aujourd'hui</div>
   </header>
 
-  <div class="content">
-    <div class="right-content">
-      <div class="offer-price">
-        PRIX = <del>47€</del> Offert à durée limitée
-      </div>
+  <div class="main-content">
+    <!-- Image à gauche -->
+    <div class="image-container"></div>
 
-      <div class="gif-container">
-        <img src="Gagnez plus de clients développer votre entreprise (1).gif" alt="Animation of business growth">
-      </div>
+    <!-- Contenu à droite -->
+    <div class="content">
+      <div class="right-content">
+        <div class="offer-price">
+          PRIX = <del>47€</del> Offert à durée limitée
+        </div>
 
-      <div class="form-container">
-        <h2>Inscrivez-vous pour un audit gratuit</h2>
-        <div class="klaviyo-form-TBJhA4"></div>
+        <div class="gif-container">
+          <img src="Gagnez plus de clients développer votre entreprise (1).gif" alt="Animation of business growth">
+        </div>
+
+        <div class="form-container">
+          <h2>Inscrivez-vous pour un audit gratuit</h2>
+          <div class="klaviyo-form-TBJhA4"></div>
+        </div>
       </div>
     </div>
   </div>
 
+  <!-- Section des bénéfices -->
   <div class="benefits">
     <h2>Pourquoi choisir C-Digital Agency ?</h2>
     <ul>
@@ -242,6 +251,7 @@
     &copy; 2023 C-Digital Agency | <a href="https://c-digitalagency.com/">Visitez notre site</a> | <a href="mailto:christophe@c-digitalagency.com">Contactez-nous</a>
   </footer>
 
+  <!-- Klaviyo Scripts -->
   <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=U37jrv'></script>
   <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=U37jrv'></script>
   <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=U37jrv'></script>
