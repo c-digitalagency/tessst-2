@@ -43,9 +43,7 @@
 
     .main-content {
       display: flex;
-      justify-content: flex-end; /* Aligne le contenu à droite sur les grands écrans */
-      padding: 20px;
-      text-align: center;
+      height: 100vh;
     }
 
     .image-container {
@@ -57,14 +55,18 @@
     }
 
     .content {
-      max-width: 800px; /* Limite la largeur du contenu */
+      flex: 1;
       display: flex;
-      flex-direction: column;
-      align-items: center; /* Centre horizontalement les éléments à l'intérieur */
+      justify-content: center;
+      align-items: center;
       background-color: rgba(0, 0, 0, 0.8);
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      text-align: center;
+    }
+
+    .right-content {
+      max-width: 90%;
+      text-align: center;
     }
 
     .offer-price {
@@ -79,9 +81,7 @@
     }
 
     .gif-container {
-      width: 100%;
-      margin-bottom: 10px;
-      text-align: center;
+      margin-bottom: 20px;
     }
 
     .gif-container img {
@@ -99,7 +99,6 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       color: #ffffff;
       margin-bottom: 20px;
-      text-align: center; /* Centre le texte à l'intérieur du formulaire */
     }
 
     .form-container h2 {
@@ -167,7 +166,6 @@
     @media (max-width: 768px) {
       .main-content {
         flex-direction: column;
-        align-items: center; /* Centre le contenu sur mobile */
       }
 
       .image-container {
@@ -176,13 +174,9 @@
 
       .content {
         max-width: 100%;
+        margin-right: 0;
+        margin-top: 20px;
         padding: 20px;
-        background-color: #000; /* Maintient l'arrière-plan noir pour un bon contraste */
-      }
-
-      .form-container {
-        max-width: 100%;
-        margin: 0 auto; /* Centre le formulaire sur mobile */
       }
 
       h1 {
@@ -201,65 +195,4 @@
     @media (max-width: 480px) {
       h1 {
         font-size: 28px;
-      }
-
-      .subtitle {
-        font-size: 14px;
-      }
-
-      .form-container h2 {
-        font-size: 18px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <h1>C-Digital Agency</h1>
-    <div class="subtitle">Transformez votre présence en ligne aujourd'hui</div>
-  </header>
-
-  <div class="main-content">
-    <!-- Image à gauche sur bureau -->
-    <div class="image-container"></div>
-
-    <!-- Contenu à droite -->
-    <div class="content">
-      <div class="offer-price">
-        PRIX = <del>47€</del> Offert à durée limitée
-      </div>
-
-      <div class="gif-container">
-        <img src="Gagnez plus de clients développer votre entreprise (1).gif" alt="Animation of business growth">
-      </div>
-
-      <div class="form-container">
-        <h2>Inscrivez-vous pour un audit gratuit</h2>
-        <div class="klaviyo-form-TBJhA4"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Section des bénéfices -->
-  <div class="benefits">
-    <h2>Pourquoi choisir C-Digital Agency ?</h2>
-    <ul>
-      <li><strong>Augmentez votre visibilité en ligne :</strong> Faites briller votre entreprise sur le web.</li>
-      <li><strong>Gagnez la confiance de vos clients :</strong> Renforcez la crédibilité et la notoriété de votre marque.</li>
-      <li><strong>Boostez vos ventes :</strong> Transformez vos visiteurs en clients fidèles.</li>
-      <li><strong>Support dédié :</strong> Bénéficiez d'un accompagnement personnalisé à chaque étape.</li>
-    </ul>
-  </div>
-
-  <footer>
-    &copy; 2023 C-Digital Agency | <a href="https://c-digitalagency.com/">Visitez notre site</a> | <a href="mailto:christophe@c-digitalagency.com">Contactez-nous</a>
-  </footer>
-
-  <!-- Klaviyo Scripts -->
-  <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=U37jrv'></script>
-  <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=U37jrv'></script>
-  <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=U37jrv'></script>
-
-</body>
-</html>
+     
