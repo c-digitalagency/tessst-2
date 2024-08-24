@@ -44,6 +44,10 @@
     .main-content {
       display: flex;
       height: 100vh;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
     }
 
     .image-container {
@@ -55,18 +59,14 @@
     }
 
     .content {
-      flex: 1;
+      max-width: 100%;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       background-color: rgba(0, 0, 0, 0.8);
-      padding: 40px;
-      text-align: center;
-    }
-
-    .right-content {
-      max-width: 90%;
-      text-align: center;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .offer-price {
@@ -81,7 +81,9 @@
     }
 
     .gif-container {
+      width: 100%;
       margin-bottom: 20px;
+      text-align: center;
     }
 
     .gif-container img {
@@ -166,6 +168,7 @@
     @media (max-width: 768px) {
       .main-content {
         flex-direction: column;
+        align-items: center;
       }
 
       .image-container {
@@ -224,21 +227,19 @@
     <!-- Image à gauche -->
     <div class="image-container"></div>
 
-    <!-- Contenu à droite -->
+    <!-- Contenu centré -->
     <div class="content">
-      <div class="right-content">
-        <div class="offer-price">
-          PRIX = <del>47€</del> Offert à durée limitée
-        </div>
+      <div class="offer-price">
+        PRIX = <del>47€</del> Offert à durée limitée
+      </div>
 
-        <div class="gif-container">
-          <img src="Gagnez plus de clients développer votre entreprise (1).gif" alt="Animation of business growth">
-        </div>
+      <div class="gif-container">
+        <img src="Gagnez plus de clients développer votre entreprise (1).gif" alt="Animation of business growth">
+      </div>
 
-        <div class="form-container">
-          <h2>Inscrivez-vous pour un audit gratuit</h2>
-          <div class="klaviyo-form-TBJhA4"></div>
-        </div>
+      <div class="form-container">
+        <h2>Inscrivez-vous pour un audit gratuit</h2>
+        <div class="klaviyo-form-TBJhA4"></div>
       </div>
     </div>
   </div>
