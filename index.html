@@ -43,9 +43,7 @@
 
     .main-content {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
+      height: 100vh;
     }
 
     .image-container {
@@ -54,20 +52,16 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
-      width: 100%;
-      height: 200px; /* Ajustement de la hauteur de l'image pour les petits écrans */
     }
 
     .content {
       flex: 1;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       background-color: rgba(0, 0, 0, 0.8);
       padding: 40px;
       text-align: center;
-      width: 100%;
     }
 
     .right-content {
@@ -96,7 +90,7 @@
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       object-fit: contain; /* Adapte l'image pour qu'elle ne déborde pas */
-      max-height: 300px; /* Ajustement de la hauteur maximale de l'image */
+      max-height: 500px; /* Ajoute une hauteur maximale pour éviter le débordement vertical */
     }
 
     .form-container {
@@ -107,7 +101,6 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       color: #ffffff;
       margin-bottom: 10px;
-      clear: both; /* Empêche le chevauchement */
     }
 
     .form-container h2 {
@@ -122,8 +115,6 @@
       padding: 20px;
       border-radius: 8px;
       color: #ffffff;
-      clear: both; /* Empêche le chevauchement */
-      width: 100%;
     }
 
     .benefits h2 {
@@ -204,12 +195,10 @@
         margin: 20px auto; /* Ajoute une marge au-dessus et en dessous du formulaire */
         padding: 15px;
         background-color: rgba(0, 0, 0, 0.8); /* Maintient un bon contraste */
-        clear: both; /* Empêche le chevauchement */
       }
 
       .benefits {
         margin-top: 40px; /* Ajoute une marge au-dessus de la section des bénéfices */
-        clear: both; /* Empêche le chevauchement */
       }
     }
   </style>
