@@ -169,7 +169,12 @@
       }
 
       .image-container {
-        display: none; /* Cache l'image de fond sur mobile */
+        display: block;
+        background-image: url('Photo C-Digital Agency.PNG'); /* Affiche l'image de fond sur mobile */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 300px; /* Ajustez la hauteur selon vos besoins */
       }
 
       .content {
@@ -177,15 +182,15 @@
         margin-right: 0;
         margin-top: 20px;
         padding: 20px;
-        background-color: #000; /* Maintient l'arrière-plan noir pour un bon contraste */
+        background-color: rgba(0, 0, 0, 0.8); /* Maintient l'arrière-plan noir pour un bon contraste */
       }
 
       .form-container {
         max-width: 150%;
         margin: 0 auto; /* Centre le formulaire sur mobile */
+      }
     }
-}
-</style>
+  </style>
 </head>
 
 <body>
