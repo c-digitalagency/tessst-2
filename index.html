@@ -164,17 +164,20 @@
 
     /* Media Queries for Mobile */
     @media (max-width: 768px) {
-      .main-content {
-        flex-direction: column;
-      }
-
-      .image-container {
-        display: block;
-        background-image: url('Photo C-Digital Agency.PNG'); /* Affiche l'image de fond sur mobile */
+      body {
+        background-image: url('Photo C-Digital Agency.PNG'); /* Applique l'image de fond sur mobile */
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
-        height: 300px; /* Ajustez la hauteur selon vos besoins */
+      }
+
+      .main-content {
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.7); /* Ajoute une superposition pour améliorer la lisibilité du texte */
+      }
+
+      .image-container {
+        display: none; /* Cache l'image container sur mobile car l'image est déjà en arrière-plan */
       }
 
       .content {
