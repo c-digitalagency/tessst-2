@@ -43,12 +43,12 @@
 
     .main-content {
       display: flex;
-      height: 100vh;
+      min-height: calc(100vh - 160px);
     }
 
     .image-container {
       flex: 1;
-      background-image: url('Photo C-Digital Agency.PNG');
+      background-image: url('Photo C-Digital Agency.PNG'); /* Votre image de fond pour le bureau */
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
@@ -89,8 +89,8 @@
       height: auto;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      object-fit: contain; /* Adapte l'image pour qu'elle ne déborde pas */
-      max-height: 500px; /* Ajoute une hauteur maximale pour éviter le débordement vertical */
+      object-fit: contain;
+      max-height: 500px;
     }
 
     .form-container {
@@ -164,10 +164,9 @@
       text-decoration: underline;
     }
 
-    /* Media Queries for Mobile */
     @media (max-width: 768px) {
       body {
-        background-image: url('Photo C-Digital Agency.PNG');
+        background-image: url('Photo C-Digital Agency Mobile.PNG'); /* Votre image de fond pour mobile */
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
@@ -175,11 +174,11 @@
 
       .main-content {
         flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.5); /* Ajout d'une superposition pour améliorer la lisibilité du texte */
+        background-color: rgba(0, 0, 0, 0.5);
       }
 
       .image-container {
-        display: none; /* Cache l'image container sur mobile car l'image est déjà en arrière-plan */
+        display: none;
       }
 
       .content {
@@ -187,19 +186,19 @@
         margin-right: 0;
         margin-top: 20px;
         padding: 20px;
-        background-color: rgba(0, 0, 0, 0.6); /* Maintient l'arrière-plan noir pour un bon contraste */
+        background-color: rgba(0, 0, 0, 0.6);
       }
 
       .form-container {
-        max-width: 100%; /* Adapte le formulaire à la largeur de l'écran */
-        margin: 20px auto; /* Ajoute une marge au-dessus et en dessous du formulaire */
+        max-width: 100%;
+        margin: 20px auto;
         padding: 15px;
-        background-color: rgba(0, 0, 0, 0.8); /* Maintient un bon contraste */
-        margin-bottom: 30px; /* Augmente la marge inférieure sur mobile pour éviter le chevauchement */
+        background-color: rgba(0, 0, 0, 0.8);
+        margin-bottom: 30px;
       }
 
       .benefits {
-        margin-top: 40px; /* Ajoute une marge au-dessus de la section des bénéfices */
+        margin-top: 40px;
       }
     }
   </style>
@@ -212,27 +211,22 @@
   </header>
 
   <div class="main-content">
-    <!-- Image à gauche -->
     <div class="image-container"></div>
-
-    <!-- Contenu à droite -->
     <div class="content">
       <div class="right-content">
         <div class="gif-container">
-          <img src="1.png" alt="Animation of business growth">
+          <img src="1.png" alt="Animation de croissance d'entreprise">
         </div>
         <div class="offer-price">
           PRIX = <del>47€</del> Offert à durée limitée
         </div>
         <div class="form-container">
-          <h2></h2>
           <div class="klaviyo-form-YfZgnQ"></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Section des bénéfices -->
   <div class="benefits">
     <h2>Pourquoi choisir C-Digital Agency ?</h2>
     <ul>
@@ -247,7 +241,6 @@
     &copy; 2023 C-Digital Agency | <a href="https://c-digitalagency.com/">Visitez notre site</a> | <a href="mailto:christophe@c-digitalagency.com">Contactez-nous</a>
   </footer>
 
-  <!-- Klaviyo Scripts -->
   <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=U37jrv'></script>
 </body>
 </html>
