@@ -15,9 +15,11 @@
             padding: 0;
         }
         .container {
-            max-width: 800px;
+            width: 100%;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
+            box-sizing: border-box;
         }
         h1, h2, h3 {
             color: #FFD700;
@@ -123,7 +125,7 @@
         .pulse {
             animation: pulse 2s infinite;
         }
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
             }
@@ -145,6 +147,33 @@
             }
             p {
                 margin-bottom: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 10px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+            .offer-price {
+                font-size: 1.8em;
+            }
+            .cta-button {
+                width: 100%;
+            }
+            .offer-highlight,
+            .important-text,
+            .success-text,
+            .bonus {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            p {
+                margin-bottom: 15px;
             }
         }
     </style>
