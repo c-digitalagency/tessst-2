@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <base href="https://example.com/special-offer/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Offre Engagement Client : Site Internet Personnalisé</title>
+    <title>Transformez votre entreprise : Les 5 secrets qui changent tout</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -25,52 +24,28 @@
             color: #FFD700;
         }
         h1 {
-            font-size: 2.5em;
+            font-size: 2.8em;
             text-align: center;
             margin-bottom: 30px;
         }
         h2 {
-            font-size: 2em;
-            border-bottom: 2px solid #FFD700;
-            padding-bottom: 10px;
-        }
-        .offer-highlight {
-            background-color: rgba(255, 215, 0, 0.1);
-            border: 2px solid #FFD700;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 30px;
-        }
-        .offer-price {
-            font-size: 2.5em;
-            color: #FFD700;
+            font-size: 2.2em;
             text-align: center;
-            margin: 20px 0;
+            margin-bottom: 20px;
         }
-        .offer-value {
-            text-decoration: line-through;
-            color: #888;
-        }
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        li {
-            margin-bottom: 15px;
-            position: relative;
-            padding-left: 30px;
-        }
-        li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
+        .text-highlight {
             color: #FFD700;
             font-weight: bold;
+            font-size: 1.2em;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 25px;
         }
         .cta-button {
             display: block;
             width: 80%;
-            max-width: 200px;
+            max-width: 250px;
             margin: 30px auto;
             padding: 15px 30px;
             background-color: #FFD700;
@@ -86,6 +61,43 @@
             background-color: #FFF;
             transform: scale(1.05);
         }
+        .section {
+            margin-bottom: 40px;
+        }
+        .quote-section {
+            background-color: rgba(255, 215, 0, 0.1);
+            padding: 20px;
+            border: 2px solid #FFD700;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+        .quote-section strong {
+            font-weight: bold;
+        }
+        .quote-quotidien {
+            color: #E57373; /* Rouge doux pour Le Quotidien */
+        }
+        .quote-netflix {
+            color: #66BB6A; /* Vert pour Netflix */
+        }
+        .offer-highlight {
+            background-color: rgba(255, 215, 0, 0.1);
+            border: 2px solid #FFD700;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .offer-price {
+            font-size: 2.8em;
+            color: #FFD700;
+            margin: 20px 0;
+        }
+        .offer-value {
+            text-decoration: line-through;
+            color: red;
+        }
         .bonus {
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
@@ -97,168 +109,105 @@
             font-weight: bold;
             font-size: 1.2em;
         }
-        .important-text {
-            background-color: rgba(255, 215, 0, 0.2);
-            border: 2px solid #FFD700;
+        .section-title {
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        .urgency {
+            background-color: rgba(255, 0, 0, 0.1);
+            border: 2px solid red;
             border-radius: 10px;
             padding: 20px;
-            margin: 30px 0;
-            color: #FFD700;
-            font-weight: bold;
             text-align: center;
-        }
-        .success-text {
-            background-color: rgba(34, 139, 34, 0.2);
-            border: 2px solid #228B22;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 30px 0;
-            color: #32CD32;
+            color: red;
             font-weight: bold;
-            text-align: center;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
-            h2 {
-                font-size: 1.5em;
-            }
-            .offer-price {
-                font-size: 2em;
-            }
-            .cta-button {
-                width: 100%;
-            }
-            .offer-highlight,
-            .important-text,
-            .success-text,
-            .bonus {
-                padding: 20px;
-                margin-bottom: 20px;
-            }
-            p {
-                margin-bottom: 20px;
-            }
-        }
-        @media (max-width: 480px) {
-            .container {
-                padding: 20px 10px;
-            }
-            h1 {
-                font-size: 1.8em;
-            }
-            h2 {
-                font-size: 1.3em;
-            }
-            .offer-price {
-                font-size: 1.8em;
-            }
-            .cta-button {
-                width: 100%;
-            }
-            .offer-highlight,
-            .important-text,
-            .success-text,
-            .bonus {
-                padding: 15px;
-                margin-bottom: 15px;
-            }
-            p {
-                margin-bottom: 15px;
-            }
+            font-size: 1.5em;
         }
     </style>
-    <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '525559826673299');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=525559826673299&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 </head>
 <body>
-    <div class="container">
-        <h1>Offre Engagement Client : Site Internet Personnalisé</h1>
-        
-        <div class="offer-highlight">
-            <h2>Boostez votre présence en ligne avec une offre exclusive</h2>
-            <p>Engagez vos clients, augmentez votre visibilité et gagnez en notoriété grâce à cette offre limitée.</p>
-            <p>Bénéficiez d'un site internet personnalisé d'une valeur de 1 800€ pour seulement 650€.</p>
-            <p>Cette offre est spécialement conçue pour maximiser l'engagement de vos clients.</p>
-            <div class="offer-price pulse">
-                650€ <span class="offer-value">1 800€</span>
-            </div>
-        </div>
 
-        <div class="important-text">
-            <p>Vous avez sûrement entendu parler du Quotidien de la Réunion. Mais connaissez-vous la véritable raison de sa chute ?</p>
-            <p>Alors que le monde entier adoptait les canaux digitaux, Le Quotidien est resté ancré dans son format papier.</p>
-            <p>Résultat : pendant que l'information se diffusait massivement via les réseaux sociaux et les plateformes en ligne, cette publication autrefois incontournable a perdu sa pertinence, menant à son déclin inexorable.</p>
-            <p>N’en faites pas de même avec votre entreprise.</p>
-            <p>Profitez de cette offre limitée, qui se termine bientôt, pour assurer votre transition vers le digital et éviter de subir le même sort.</p>
-        </div>
+<div class="container">
 
-        <div class="success-text">
-            <p>À l'opposé, Netflix a su saisir l'opportunité du digital.</p>
-            <p>Autrefois un simple service de location de vidéos, Netflix a rapidement adopté les nouvelles technologies et s'est transformé en une plateforme de streaming en ligne.</p>
-            <p>Tous ses concurrents qui n'ont pas suivi cette tendance ont disparu, tandis que Netflix vaut aujourd'hui plusieurs milliards d'euros.</p>
-            <p>Suivez l'exemple de Netflix et assurez-vous un avenir prospère en adoptant une stratégie digitale dès maintenant.</p>
-        </div>
+    <h1>Transformez votre entreprise : Les 5 secrets des leaders qui réussissent</h1>
 
-        <h2>Ce que cette offre inclut :</h2>
-        <ul>
-            <li>
-                <h3>Création de Site Internet Professionnel :</h3>
-                <ul>
-                    <li>Conception d'un site vitrine de 3 pages (Accueil, Services, Contact) sur mesure.</li>
-                    <li>Design responsive et moderne, optimisé pour l'expérience utilisateur.</li>
-                    <li>Intégration des contenus de base pour présenter vos services.</li>
-                </ul>
-            </li>
-        </ul>
+    <h2>Est-ce que vos clients vous trouvent facilement ?</h2>
 
-        <div class="bonus">
-            <h3>Bonus exclusif :</h3>
-            <p><strong>Support pendant 1 mois :</strong> Bénéficiez de conseils et d'ajustements gratuits pendant 30 jours après la mise en place.</p>
-            <p><strong>Domaine offert :</strong> Un nom de domaine d'une valeur de 20€ est offert pendant 1 an.</p>
-            <p><strong>Testing publicitaire :</strong> 50€ de crédit publicitaire pour une campagne de testing d'une journée, inclus gratuitement pour <span class="highlight">seulement 1€ de plus !</span></p>
-        </div>
+    <p>Imaginez-vous en ce moment même... Combien de clients potentiels passent à côté de votre entreprise sans jamais savoir qu'elle existe ? Combien choisissent vos concurrents simplement parce qu’ils sont plus visibles que vous ? C'est frustrant, n'est-ce pas ?</p>
 
-        <h2>Pourquoi cette offre est-elle irrésistible ?</h2>
-        <ul>
-            <li><strong>Tarif exceptionnel :</strong> Un site d'une valeur de 1 800€ pour seulement 650€.</li>
-            <li><strong>Résultats rapides :</strong> Mettez rapidement en place une présence digitale efficace pour engager vos clients.</li>
-            <li><strong>Accompagnement personnalisé :</strong> Nous vous assistons à chaque étape pour garantir le succès de votre site.</li>
-        </ul>
+    <p>La vérité, c'est que même si vous offrez le meilleur produit ou service, si personne ne le sait, cela n’a aucune valeur. Et c’est exactement ce qui arrive à la plupart des entreprises. Elles disparaissent dans la masse, invisibles, alors que les clients ne demandent qu’à les découvrir. Mais il y a une solution : <span class="text-highlight">la visibilité digitale.</span></p>
 
-        <p><strong>Ne manquez pas cette opportunité</strong> - Cette offre spéciale est limitée et réservée aux premières entreprises intéressées.</p>
+    <p>Ce qui suit va littéralement transformer la manière dont vous attirez vos clients. Prenez le temps de le lire, car cela pourrait sauver votre entreprise.</p>
 
-        <a href="tel:+262692488581" class="cta-button">Contactez-moi : 06 92 48 85 81</a>
+    <div class="quote-section quote-quotidien">
+        <strong>Le Quotidien de la Réunion :</strong> Ce journal était autrefois une référence, mais il a refusé d’évoluer avec son temps. Alors que le monde entier se tournait vers le digital, Le Quotidien s'accrochait à ses racines, restant dans le format papier. Résultat ? Une perte d'influence et de pertinence totale. <strong style="color: #E57373;">Ne faites pas la même erreur !</strong>
+        <img src="https://example.com/images/quotidien.jpg" alt="Le Quotidien de la Réunion" />
     </div>
-    <footer style="text-align: center; padding: 20px; background-color: #111; color: #fff; margin-top: 40px;">
+
+    <div class="quote-section quote-netflix">
+        <strong>Netflix :</strong> De l'autre côté, Netflix a su saisir l'opportunité de la digitalisation. Ce qui était une simple location de DVD est devenu un empire du streaming. Les entreprises qui refusent d’innover finissent par disparaître. Celles qui saisissent les opportunités numériques, elles, prospèrent. <strong style="color: #66BB6A;">Soyez comme Netflix.</strong>
+        <img src="https://example.com/images/netflix.jpg" alt="Netflix" />
+    </div>
+
+    <h2>Visualisez ceci : vos clients interagissent avec vous sans quitter leur domicile</h2>
+
+    <p>Imaginez un instant que vos clients puissent vous découvrir à n’importe quel moment, peu importe où ils se trouvent. Qu’ils puissent explorer vos offres, se connecter à votre entreprise et acheter vos produits directement depuis leur canapé.</p>
+
+    <p><span class="text-highlight">La question n'est pas si cela est possible</span>, la vraie question est : "Pourquoi attendre pour le faire ?" Votre visibilité peut changer aujourd'hui. Votre site sera votre porte d’entrée pour capter l’attention de tous ces clients qui vous manquent. À partir d’aujourd’hui, votre entreprise peut enfin être vue et entendue.</p>
+
+    <h2 class="section-title">Voici exactement ce que vous obtenez :</h2>
+
+    <div class="offer-highlight">
+        <p><strong>Offre spéciale :</strong> Un site internet personnalisé, habituellement proposé à <span class="offer-value">1 800€</span>, est aujourd'hui à vous pour seulement <span class="offer-price">650€</span>.</p>
+    </div>
+
+    <ul>
+        <li><strong>Un site vitrine totalement personnalisé :</strong> Un design sur-mesure, adapté à votre marque et vos valeurs.</li>
+        <li><strong>Un site responsive :</strong> Vos clients pourront vous consulter partout, depuis n’importe quel appareil.</li>
+        <li><strong>Des conseils stratégiques pour booster votre visibilité :</strong> Nous vous montrons exactement comment capter l'attention de vos clients.</li>
+    </ul>
+
+    <div class="bonus">
+        <h3>EST CE N'EST PAS TOUT !</h3>
+        <p><strong>Support pendant 1 mois :</strong> Recevez un accompagnement et des ajustements gratuits après la mise en ligne.</p>
+        <p><strong>Domaine offert :</strong> Un nom de domaine d'une valeur de 20€ est inclus pendant un an.</p>
+        <p><strong>Crédit publicitaire :</strong> 50€ de crédit pour tester une campagne publicitaire avec seulement 1€ de plus.</p>
+    </div>
+
+    <p class="text-highlight">Agissez maintenant, votre avenir dépend de cette décision.</p>
+
+    <div class="urgency">
+        ATTENTION : Cette offre est limitée à 24 heures ! Le compteur est en route, il ne vous reste plus beaucoup de temps pour transformer l'avenir de votre entreprise.
+    </div>
+
+    <a href="tel:+262692488581" class="cta-button">Contactez-moi : 06 92 48 85 81</a>
+
+</div>
+
+<footer style="text-align: center; padding: 20px; background-color: #111; color: #fff; margin-top: 40px;">
     &copy; 2023 C-Digital Agency | <a href="https://c-digitalagency.com/" style="color: #FFD700; text-decoration: none;">Visitez notre site</a> | 
     <a href="mailto:christophe@c-digitalagency.com" style="color: #FFD700; text-decoration: none;">Contactez-nous</a> | 
     <a href="offre.html" style="color: #FFD700; text-decoration: none;">Offre</a>
 </footer>
+
+<script>
+    let countdown = 24 * 60 * 60; // 24 hours in seconds
+    const timerElement = document.getElementById("timer");
+
+    setInterval(() => {
+        let hours = Math.floor(countdown / 3600);
+        let minutes = Math.floor((countdown % 3600) / 60);
+        let seconds = countdown % 60;
+
+        timerElement.textContent = `${hours}h ${minutes}m ${seconds}s`;
+        countdown--;
+
+        if (countdown < 0) {
+            timerElement.textContent = "EXPIRE";
+        }
+    }, 1000);
+</script>
 
 </body>
 </html>
