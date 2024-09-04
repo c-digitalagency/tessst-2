@@ -93,6 +93,8 @@
             font-size: 2.8em;
             color: #FFD700;
             margin: 20px 0;
+            /* Animation */
+            animation: pulse 2s infinite;
         }
         .offer-value {
             text-decoration: line-through;
@@ -124,6 +126,24 @@
             font-weight: bold;
             font-size: 1.5em;
         }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        #countdown {
+            font-size: 1.8em;
+            color: #FFD700;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -152,7 +172,7 @@
 
     <h2>Visualisez ceci : vos clients interagissent avec vous sans quitter leur domicile</h2>
 
-    <p>Imaginez un instant que vos clients puissent vous découvrir à n’importe quel moment, peu importe où ils se trouvent. Qu’ils puissent explorer vos offres, se connecter à votre entreprise et acheter vos produits directement depuis leur canapé.</p>
+    <p>Imaginez un instant que vos clients puissent vous découvrir à n’importe quel moment, peu importe où ils se trouvent. Qu’ils puissent explorer vos offres, se connecter à votre entreprise et être en contact direct avec vous, où qu’ils soient, sans effort.</p>
 
     <p><span class="text-highlight">La question n'est pas si cela est possible</span>, la vraie question est : "Pourquoi attendre pour le faire ?" Votre visibilité peut changer aujourd'hui. Votre site sera votre porte d’entrée pour capter l’attention de tous ces clients qui vous manquent. À partir d’aujourd’hui, votre entreprise peut enfin être vue et entendue.</p>
 
@@ -178,7 +198,7 @@
     <p class="text-highlight">Agissez maintenant, votre avenir dépend de cette décision.</p>
 
     <div class="urgency">
-        ATTENTION : Cette offre est limitée à 24 heures ! Le compteur est en route, il ne vous reste plus beaucoup de temps pour transformer l'avenir de votre entreprise.
+        ATTENTION : Cette offre est limitée à 24 heures ! Il vous reste : <span id="countdown">24h 00m 00s</span>
     </div>
 
     <a href="tel:+262692488581" class="cta-button">Contactez-moi : 06 92 48 85 81</a>
@@ -192,21 +212,34 @@
 </footer>
 
 <script>
-    let countdown = 24 * 60 * 60; // 24 hours in seconds
-    const timerElement = document.getElementById("timer");
+    function countdownToMidnightReunion() {
+        // Créer une nouvelle date avec le fuseau horaire GMT+4 (La Réunion)
+        let now = new Date();
+        let reunionTime = new Date(now.toLocaleString("en-US", {timeZone: "Indian/Reunion"}));
 
-    setInterval(() => {
-        let hours = Math.floor(countdown / 3600);
-        let minutes = Math.floor((countdown % 3600) / 60);
-        let seconds = countdown % 60;
+        // Calculer l'heure de minuit de demain à La Réunion
+        let midnightReunion = new Date(reunionTime.getFullYear(), reunionTime.getMonth(), reunionTime.getDate() + 1, 0, 0, 0);
 
-        timerElement.textContent = `${hours}h ${minutes}m ${seconds}s`;
-        countdown--;
+        // Calculer la différence de temps entre maintenant et minuit
+        let timeDifference = midnightReunion - reunionTime;
 
-        if (countdown < 0) {
-            timerElement.textContent = "EXPIRE";
-        }
-    }, 1000);
+        // Mettre à jour le compte à rebours chaque seconde
+        setInterval(() => {
+            timeDifference -= 1000;
+
+            if (timeDifference >= 0) {
+                let hours = Math.floor(timeDifference / (1000 * 60 * 60));
+                let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+                document.getElementById("countdown").innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+            } else {
+                document.getElementById("countdown").innerHTML = "EXPIRE";
+            }
+        }, 1000);
+    }
+
+    countdownToMidnightReunion();
 </script>
 
 </body>
