@@ -20,14 +20,36 @@
             padding: 40px 20px;
             box-sizing: border-box;
         }
-        h1, h2, h3 {
-            color: #FFD700;
-        }
-        h1 {
-            font-size: 2.8em;
+
+        /* Bannière avec image de fond pour le titre */
+        .banner {
+            background-image: url('https://c-digitalagency.com/evo entreprise.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
             text-align: center;
-            margin-bottom: 30px;
+            position: relative;
         }
+
+        .banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Superposition sombre pour rendre le texte lisible */
+            z-index: 1;
+        }
+
+        .banner h1 {
+            font-size: 3em;
+            color: #FFD700;
+            z-index: 2;
+            position: relative;
+            margin: 0;
+        }
+
         h2 {
             font-size: 2.2em;
             text-align: center;
@@ -76,10 +98,10 @@
             font-weight: bold;
         }
         .quote-quotidien {
-            color: #E57373; /* Rouge doux pour Le Quotidien */
+            color: #E57373;
         }
         .quote-netflix {
-            color: #66BB6A; /* Vert pour Netflix */
+            color: #66BB6A;
         }
         .offer-highlight {
             background-color: rgba(255, 215, 0, 0.1);
@@ -93,7 +115,6 @@
             font-size: 2.8em;
             color: #FFD700;
             margin: 20px 0;
-            /* Animation */
             animation: pulse 2s infinite;
         }
         .offer-value {
@@ -149,37 +170,39 @@
 <body>
 
 <div class="container">
+    <!-- Section bannière avec image -->
+    <div class="banner">
+        <h1><strong>Transformez votre entreprise</strong> : Les 5 secrets des leaders qui réussissent</h1>
+    </div>
 
-    <h1>Transformez votre entreprise : Les 5 secrets des leaders qui réussissent</h1>
+    <h2>Est-ce que vos clients vous trouvent <strong>facilement</strong> ?</h2>
 
-    <h2>Est-ce que vos clients vous trouvent facilement ?</h2>
+    <p><strong>Imaginez-vous</strong> en ce moment même... Combien de <strong>clients potentiels</strong> passent à côté de votre entreprise sans jamais savoir qu'elle existe ? Combien choisissent vos concurrents simplement parce qu’ils sont plus <strong>visibles</strong> que vous ? C'est <strong>frustrant</strong>, n'est-ce pas ?</p>
 
-    <p>Imaginez-vous en ce moment même... Combien de clients potentiels passent à côté de votre entreprise sans jamais savoir qu'elle existe ? Combien choisissent vos concurrents simplement parce qu’ils sont plus visibles que vous ? C'est frustrant, n'est-ce pas ?</p>
+    <p>La vérité, c'est que même si vous offrez le <strong>meilleur produit</strong> ou service, si personne ne le sait, cela n’a <strong>aucune valeur</strong>. Et c’est exactement ce qui arrive à la plupart des entreprises. Elles disparaissent dans la masse, invisibles, alors que les clients ne demandent qu’à les découvrir. Mais il y a une solution : <span class="text-highlight"><strong>Votre site internet.</strong></span></p>
 
-    <p>La vérité, c'est que même si vous offrez le meilleur produit ou service, si personne ne le sait, cela n’a aucune valeur. Et c’est exactement ce qui arrive à la plupart des entreprises. Elles disparaissent dans la masse, invisibles, alors que les clients ne demandent qu’à les découvrir. Mais il y a une solution : <span class="text-highlight">la visibilité digitale.</span></p>
-
-    <p>Ce qui suit va littéralement transformer la manière dont vous attirez vos clients. Prenez le temps de le lire, car cela pourrait sauver votre entreprise.</p>
+    <p>Ce qui suit va <strong>littéralement transformer</strong> la manière dont vous attirez vos clients. Prenez le temps de le lire, car cela pourrait <strong>sauver votre entreprise</strong>.</p>
 
     <div class="quote-section quote-quotidien">
-        <strong>Le Quotidien de la Réunion :</strong> Ce journal était autrefois une référence, mais il a refusé d’évoluer avec son temps. Alors que le monde entier se tournait vers le digital, Le Quotidien s'accrochait à ses racines, restant dans le format papier. Résultat ? Une perte d'influence et de pertinence totale. <strong style="color: #E57373;">Ne faites pas la même erreur !</strong>
+        <strong>Le Quotidien de la Réunion :</strong> Ce journal était autrefois une <strong>référence</strong>, mais il a refusé d’évoluer avec son temps. Alors que le monde entier se tournait vers le digital, Le Quotidien s'accrochait à ses racines, restant dans le format papier. Résultat ? Une <strong>perte d'influence</strong> et de <strong>pertinence</strong> totale. <strong style="color: #E57373;">Ne faites pas la même erreur !</strong>
         <img src="https://c-digitalagency.com/1.png" alt="Le Quotidien de la Réunion" />
     </div>
 
     <div class="quote-section quote-netflix">
-        <strong>Netflix :</strong> De l'autre côté, Netflix a su saisir l'opportunité de la digitalisation. Ce qui était une simple location de DVD est devenu un empire du streaming. Les entreprises qui refusent d’innover finissent par disparaître. Celles qui saisissent les opportunités numériques, elles, prospèrent. <strong style="color: #66BB6A;">Soyez comme Netflix.</strong>
+        <strong>Netflix :</strong> De l'autre côté, Netflix a su saisir l'opportunité de la <strong>digitalisation</strong>. Ce qui était une simple location de DVD est devenu un <strong>empire</strong> du streaming. Les entreprises qui refusent d’innover finissent par disparaître. Celles qui saisissent les <strong>opportunités numériques</strong>, elles, prospèrent. <strong style="color: #66BB6A;">Soyez comme Netflix.</strong>
         <img src="https://c-digitalagency.com/2.png" alt="Netflix" />
     </div>
 
-    <h2>Visualisez ceci : vos clients interagissent avec vous sans quitter leur domicile</h2>
+    <h2><strong>Visualisez ceci</strong> : vos clients interagissent avec vous sans quitter leur domicile</h2>
 
-    <p>Imaginez un instant que vos clients puissent vous découvrir à n’importe quel moment, peu importe où ils se trouvent. Qu’ils puissent explorer vos offres, se connecter à votre entreprise et être en contact direct avec vous, où qu’ils soient, sans effort.</p>
+    <p><strong>Imaginez</strong> un instant que vos clients puissent vous découvrir à <strong>n’importe quel moment</strong>, peu importe où ils se trouvent. Qu’ils puissent explorer vos offres, se connecter à votre entreprise et être en contact direct avec vous, où qu’ils soient, sans effort.</p>
 
-    <p><span class="text-highlight">La question n'est pas si cela est possible</span>, la vraie question est : "Pourquoi attendre pour le faire ?" Votre visibilité peut changer aujourd'hui. Votre site sera votre porte d’entrée pour capter l’attention de tous ces clients qui vous manquent. À partir d’aujourd’hui, votre entreprise peut enfin être vue et entendue.</p>
+    <p><span class="text-highlight"><strong>La question n'est pas si cela est possible</strong></span>, la vraie question est : <strong>"Pourquoi attendre pour le faire ?"</strong> <strong>Votre site</strong> sera votre <strong>porte d’entrée</strong> pour capter l’attention de tous ces <strong>clients qui vous manquent</strong>. À partir d’aujourd’hui, votre entreprise peut enfin être <strong>vue et entendue</strong>.</p>
 
     <h2 class="section-title">Voici exactement ce que vous obtenez :</h2>
 
     <div class="offer-highlight">
-        <p><strong>Offre spéciale :</strong> Un site internet personnalisé, habituellement proposé à <span class="offer-value">1 800€</span>, est aujourd'hui à vous pour seulement <span class="offer-price">650€</span>.</p>
+        <p><strong>Offre spéciale :</strong> Un site internet personnalisé, habituellement proposé à <span class="offer-value">1 800€</span>, est aujourd'hui à vous pour seulement <span class="offer-price">150€</span>.</p>
     </div>
 
     <ul>
@@ -191,47 +214,37 @@
     <div class="bonus">
         <h3>EST CE N'EST PAS TOUT !</h3>
         <p><strong>Support pendant 1 mois :</strong> Recevez un accompagnement et des ajustements gratuits après la mise en ligne.</p>
-        <p><strong>Domaine offert :</strong> Un nom de domaine d'une valeur de 20€ est inclus pendant un an.</p>
-        <p><strong>Crédit publicitaire :</strong> 50€ de crédit pour tester une campagne publicitaire avec seulement 1€ de plus.</p>
     </div>
 
-    <p class="text-highlight">Agissez maintenant, votre avenir dépend de cette décision.</p>
+    <p class="text-highlight">Agissez maintenant, votre <strong>avenir</strong> dépend de cette <strong>décision</strong>.</p>
 
     <div class="urgency">
-        ATTENTION : Cette offre est limitée à 24 heures ! Il vous reste : <span id="countdown">24h 00m 00s</span>
+        <strong>ATTENTION</strong> : Cette offre est <strong>limitée</strong> à 24 heures ! Il vous reste : <span id="countdown">24h 00m 00s</span>
     </div>
 
-    <a href="tel:+262692488581" class="cta-button">Contactez-moi : 06 92 48 85 81</a>
+    <a href="tel:+262692488581" class="cta-button"><strong>Contactez-moi</strong> : 06 92 48 85 81</a>
 
 </div>
 
 <footer style="text-align: center; padding: 20px; background-color: #111; color: #fff; margin-top: 40px;">
-    &copy; 2023 C-Digital Agency | <a href="https://c-digitalagency.com/" style="color: #FFD700; text-decoration: none;">Visitez notre site</a> | 
-    <a href="mailto:christophe@c-digitalagency.com" style="color: #FFD700; text-decoration: none;">Contactez-nous</a> | 
-    <a href="offre.html" style="color: #FFD700; text-decoration: none;">Offre</a>
+    &copy; 2023 C-Digital Agency | <a href="https://c-digitalagency.com/" style="color: #FFD700; text-decoration: none;"><strong>Visitez notre site</strong></a> | 
+    <a href="mailto:christophe@c-digitalagency.com" style="color: #FFD700; text-decoration: none;"><strong>Contactez-nous</strong></a> | 
+    <a href="offre.html" style="color: #FFD700; text-decoration: none;"><strong>Offre</strong></a>
 </footer>
 
 <script>
     function countdownToMidnightReunion() {
-        // Créer une nouvelle date avec le fuseau horaire GMT+4 (La Réunion)
         let now = new Date();
         let reunionTime = new Date(now.toLocaleString("en-US", {timeZone: "Indian/Reunion"}));
-
-        // Calculer l'heure de minuit de demain à La Réunion
         let midnightReunion = new Date(reunionTime.getFullYear(), reunionTime.getMonth(), reunionTime.getDate() + 1, 0, 0, 0);
-
-        // Calculer la différence de temps entre maintenant et minuit
         let timeDifference = midnightReunion - reunionTime;
-
-        // Mettre à jour le compte à rebours chaque seconde
+        
         setInterval(() => {
             timeDifference -= 1000;
-
             if (timeDifference >= 0) {
                 let hours = Math.floor(timeDifference / (1000 * 60 * 60));
                 let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
                 let seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
                 document.getElementById("countdown").innerHTML = `${hours}h ${minutes}m ${seconds}s`;
             } else {
                 document.getElementById("countdown").innerHTML = "EXPIRE";
