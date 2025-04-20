@@ -106,39 +106,12 @@
       position: relative;
       overflow: visible;
     }
-    /* SVG illustration float and bubble animation */
-    .image-container svg#hero-quincaillerie {
-      max-width: 94%;
-      width: 410px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      filter: drop-shadow(0 6px 18px rgba(0,0,0,0.11));
-      z-index: 0;
-      animation: float 4s ease-in-out infinite;
-    }
-    @keyframes float {
-      0% { transform: translateY(0);}
-      50% { transform: translateY(-16px);}
-      100% { transform: translateY(0);}
-    }
-    /* Animated icons bubble */
-    .hero-icon-bubble {
-      position: absolute;
-      z-index: 1;
-      will-change: transform;
-      opacity: 0.8;
-      pointer-events: none;
-      animation: bubbleUp 7s infinite linear;
-    }
-    .bubble-delay-1 { left: 18%; top: 84%; animation-delay: 0.5s;}
-    .bubble-delay-2 { left: 80%; top: 95%; animation-delay: 2.4s;}
-    .bubble-delay-3 { left: 8%;  top: 72%; animation-delay: 4.1s;}
-    @keyframes bubbleUp {
-      0%   { transform: scale(0.9) translateY(0) rotate(-9deg);}
-      15%  { opacity: 1;}
-      75%  { opacity: 0.58;}
-      100% { transform: scale(1.21) translateY(-85px) rotate(22deg); opacity: 0;}
+    /* Catalog Embed: Iframe */
+    .catalog-embed {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 0 0 24px 24px;
     }
 
     .content {
@@ -169,176 +142,7 @@
       overflow: hidden;
       animation: popin 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     }
-    .incitation::after {
-      content: "";
-      position: absolute; left: -60%; top: 0; height: 100%; width: 51%;
-      background: linear-gradient(90deg, transparent, #fff7, transparent);
-      transform: skewX(-28deg);
-      animation: shimmer 7s infinite 0.5s;
-    }
-    @keyframes shimmer {
-      0% { left: -60%;}
-      42% { left: 90%;}
-      100% { left: 90%;}
-    }
-    @keyframes popin {
-      0% { transform: scale(.95); opacity:0.5;}
-      80% { transform: scale(1.04);}
-      100% { transform: scale(1); opacity:1;}
-    }
-    .incitation strong {
-      color: var(--accent-yellow);
-      font-weight: 800;
-      letter-spacing: 0.7px;
-      text-shadow: 1px 1px 5px rgba(255,183,56,0.09);
-    }
-    .offer-price {
-      font-size: 21px;
-      margin-bottom: 22px;
-      color: var(--brand-red);
-      font-weight: bold;
-      background: var(--brand-red-bg);
-      padding: 6px 16px;
-      border-radius: 8px;
-      display: inline-block;
-      border: 1px solid var(--brand-red);
-    }
-    .offer-price del {
-      color: var(--grey-medium);
-      margin-right: 7px;
-      font-weight: normal;
-    }
-    /* Dynamic Animated Bar Chart */
-    .gif-container {
-      margin-bottom: 20px;
-      background: #fdfdfd;
-      border-radius: 12px;
-      box-shadow: 0 3px 16px rgba(0,0,0,0.06);
-      border: 1px solid #eee;
-      padding: 24px 12px 8px 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: box-shadow .18s;
-    }
-    .gif-container svg {
-      width: 100%;
-      max-width: 350px;
-      max-height: 185px;
-      height: auto;
-      display: block;
-    }
-    /* Bar animation style */
-    .gif-container svg text {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-    }
-    /* Klaviyo Form block */
-    .form-container {
-      width: 100%;
-      background-color: #fff;
-      padding: 22px 12px 17px;
-      border-radius: 12px;
-      box-shadow: 0 6px 22px rgba(194,0,0,0.07);
-      color: var(--brand-red);
-      margin-bottom: 8px;
-      border: 1.5px solid #e8bbbb;
-      transition: box-shadow 0.33s;
-    }
-    .form-container:focus-within {
-      box-shadow: 0 8px 34px rgba(194,0,0,0.17);
-    }
-    .form-container h2 {
-      font-size: 20.4px;
-      margin-bottom: 17px;
-      color: var(--brand-red);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-    }
-    /* ----- Benefits / Features -------- */
-    .benefits {
-      margin: 48px auto 32px auto;
-      max-width: 950px;
-      text-align: center;
-      background: linear-gradient(98deg, var(--text-light) 0%, var(--brand-red-bg) 100%);
-      padding: 37px 18px 38px 18px;
-      border-radius: 18px;
-      color: var(--text-dark);
-      border: 1.5px solid #f0c0c0;
-      font-size: 1.08em;
-      box-shadow: 0 7px 22px rgba(194,0,0,0.08);
-      transition: box-shadow .2s;
-      /* simple fade-in on scroll animation */
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 1s cubic-bezier(.68,-0.55,.265,1.55);
-    }
-    .benefits.visible { opacity: 1; transform: translateY(0);}
-    .benefits h2 {
-      font-size: 28px;
-      margin-bottom: 30px;
-      color: var(--brand-red);
-      font-weight: bold;
-      letter-spacing: .13px;
-    }
-    .benefits ul {
-      list-style: none;
-      padding: 0;
-      max-width: 810px;
-      margin: 0 auto;
-      text-align: left;
-    }
-    .benefits li {
-      margin-bottom: 24px;
-      font-size: 18.7px;
-      display: flex;
-      align-items: flex-start;
-      line-height: 1.48;
-      opacity: 0;
-      transform: translateX(-28px);
-      transition: opacity 0.6s cubic-bezier(.68,-0.55,.265,1.55), transform 0.7s cubic-bezier(.68,-0.55,.265,1.55);
-    }
-    .benefits li.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    .benefits li strong {
-      color: var(--brand-red);
-      font-weight: 600;
-    }
-    .benefits li::before {
-      content: '';
-      flex-shrink: 0;
-      display: inline-block;
-      width: 26px;
-      height: 26px;
-      background: var(--brand-red);
-      mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="currentColor"/><path d="M23 12l-8.06 8-3.94-4" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/contain no-repeat;
-      margin-right: 14px;
-      margin-top: 1px;
-      opacity: 0.89;
-    }
-    footer {
-      background-color: var(--brand-red);
-      color: var(--text-light);
-      padding: 22px 8px 19px 8px;
-      text-align: center;
-      font-size: 15px;
-      margin-top: auto;
-      box-shadow: 0 -2.5px 12px rgba(0,0,0,0.11);
-      border-radius: 14px 14px 0 0;
-    }
-    footer a {
-      color: #ffdada;
-      text-decoration: none;
-      margin: 0 7px;
-      border-bottom: 1px dotted transparent;
-      transition: color .21s, border-bottom .18s;
-    }
-    footer a:hover {
-      color: var(--text-light);
-      border-bottom: 1px dotted var(--text-light);
-    }
-    /* --------------------------------- */
+    /* Mobile responsiveness */
     @media (max-width: 900px) {
       .main-content {
         flex-direction: column;
@@ -351,53 +155,54 @@
         padding: 15px 0 0 0;
         background: linear-gradient(150deg,var(--brand-red-bg) 0%, #fff 100%);
       }
-      .image-container svg#hero-quincaillerie {
-        width: 87vw;
-        max-width: 330px;
-        margin: 0 auto;
-      }
-      .hero-icon-bubble {
-        width: 36px !important;
-        height: 36px !important;
-      }
       .content { padding: 22px 9px 23px 9px; }
       .right-content { max-width: 100%;}
-      .form-container { padding: 11px 0 16px;}
-      .benefits {
-        margin: 32px 0 22px 0;
-        border-radius: 12px;
-        padding: 21px 7vw 21px 6vw;
-      }
-      .benefits h2 { font-size: 21px;}
-      .benefits li { font-size: 16px;}
-      .offer-price { font-size: 15.7px;}
-      .incitation { font-size: 16px; padding: 15px 7px 13px;}
     }
+
     @media (max-width: 600px) {
       .header-logo { flex-direction: column; gap: 6px;}
       .header-logo img { height: 34px; margin-bottom: 1.5px;}
       .header-name { font-size: 18.5px;}
       .subtitle { font-size: 13.6px; padding: 6px 10px;}
     }
+
+    /* New Section Styles: Avantages d'avoir un Commercial */
+    .sales-benefits {
+      background: #f4f4f4;
+      padding: 50px 0;
+      text-align: center;
+    }
+    .sales-benefits h2 {
+      font-size: 28px;
+      color: var(--brand-red);
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .benefit-item {
+      display: inline-block;
+      width: 30%;
+      margin: 0 15px;
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease-in-out;
+    }
+    .benefit-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+    .benefit-item h3 {
+      font-size: 20px;
+      color: var(--brand-red);
+      margin-bottom: 10px;
+    }
+    .benefit-item p {
+      font-size: 16px;
+      color: var(--text-dark);
+    }
+
   </style>
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '525559826673299');
-  fbq('track', 'PageView');
-  </script>
-  <noscript>
-  <img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=525559826673299&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- End Meta Pixel Code -->
 </head>
 <body>
   <header>
@@ -410,102 +215,14 @@
   </header>
   <div class="main-content">
     <div class="image-container">
-      <!-- Hero SVG Illustration : Quincaillerie Pro + ambiance visuelve -->
-      <svg id="hero-quincaillerie" viewBox="0 0 420 260" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <linearGradient id="toolGradient" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#c20000"/>
-            <stop offset="100%" stop-color="#ed4242"/>
-          </linearGradient>
-          <linearGradient id="metal" x1="0" y1="1" x2="1" y2="0">
-            <stop offset="0%" stop-color="#b0b0b0"/>
-            <stop offset="100%" stop-color="#f7f7f7"/>
-          </linearGradient>
-        </defs>
-        <!-- Modern counter/workbench -->
-        <rect x="50" y="122" width="320" height="47" rx="12" fill="url(#metal)" stroke="#c20000" stroke-width="3"/>
-        <!-- Tools: hammer -->
-        <g>
-          <rect x="95" y="62" width="22" height="60" rx="7" fill="url(#toolGradient)" />
-          <rect x="88" y="52" width="36" height="18" rx="7" fill="#dedede" stroke="#bbb" stroke-width="1"/>
-          <rect x="93" y="58" width="26" height="7" rx="2.9" fill="#c20000" opacity="0.16"/>
-        </g>
-        <!-- Tools: wrench -->
-        <g transform="translate(150,68) rotate(18)">
-          <rect x="0" y="0" width="15" height="54" rx="6" fill="url(#toolGradient)"/>
-          <ellipse cx="7.5" cy="8" rx="7" ry="7" fill="#dadada" stroke="#c20000" stroke-width="1"/>
-          <ellipse cx="7.5" cy="46" rx="7" ry="7" fill="#dadada" stroke="#c20000" stroke-width="1"/>
-        </g>
-        <!-- Toolbox -->
-        <rect x="250" y="100" width="50" height="30" rx="6" fill="#fff4f4" stroke="#c20000" stroke-width="2"/>
-        <rect x="263" y="95" width="24" height="12" rx="4" fill="#ed4242"/>
-        <!-- Gear Wheel -->
-        <g transform="translate(260,190)">
-          <circle r="23" fill="url(#toolGradient)" opacity="0.22"/>
-          <circle r="14" fill="#fff" stroke="#c20000" stroke-width="2"/>
-          <!-- gear branches -->
-          <g>
-            <rect x="-3" y="-26" width="6" height="13" fill="#c20000"/>
-            <rect x="-3" y="13" width="6" height="13" fill="#ed4242"/>
-            <rect x="13" y="-3" width="13" height="6" fill="#c20000"/>
-            <rect x="-26" y="-3" width="13" height="6" fill="#ed4242"/>
-            <rect x="10" y="10" width="7" height="6" fill="#c20000" transform="rotate(45 14 13)"/>
-            <rect x="-17" y="-16" width="7" height="6" fill="#ed4242" transform="rotate(-45 -14 -13)"/>
-          </g>
-        </g>
-        <!-- Wood plank for mood -->
-        <rect x="53" y="168" width="85" height="13" rx="4" fill="#ffc600" opacity="0.16" />
-        <!-- Label Bulle -->
-        <rect x="67" y="22" width="106" height="32" rx="14" fill="#fff" stroke="#c20000" stroke-width="2.2"/>
-        <text x="120" y="42" fill="#c20000" font-size="16" font-family="Helvetica Neue, Arial,sans-serif" text-anchor="middle" font-weight="bold">Quincaillerie PRO</text>
-        <!-- Some fun dots and sparkle -->
-        <circle cx="310" cy="45" r="4.3" fill="#ed4242" opacity="0.9"/>
-        <circle cx="328" cy="40" r="2.7" fill="#ed4242" opacity="0.45"/>
-        <rect x="144" y="170" width="16" height="11" rx="3" fill="#ed4242"/>
-        <!-- Star Sparkle -->
-        <g>
-          <polygon points="362,72 364.6,77.2 370.7,77.7 366,81.5 367.3,87.6 362,84.3 356.7,87.6 358,81.5 353.3,77.7 359.4,77.2" fill="#ffc600" opacity="0.65"/>
-        </g>
-      </svg>
-      <!-- Animated dynamic "floating" tool icon bubbles -->
-      <svg class="hero-icon-bubble bubble-delay-1" width="41" height="41" viewBox="0 0 41 41"><circle cx="20.5" cy="20.5" r="20.5" fill="#fff"/><g transform="translate(9,10)"><rect x="8" width="5" height="19" rx="2.2" fill="url(#toolGradient)"/><rect x="0" y="3" width="20" height="4" rx="2" fill="#ddd" stroke="#c20000" stroke-width="1"/></g></svg>
-      <svg class="hero-icon-bubble bubble-delay-2" width="34" height="34" viewBox="0 0 34 34"><circle cx="17" cy="17" r="17" fill="#fff"/><g transform="translate(7,7)"><ellipse cx="8" cy="6" rx="8" ry="6" fill="#dadada" stroke="#c20000" stroke-width="1"/><rect y="4" width="16" height="6" rx="3" fill="url(#toolGradient)" /></g></svg>
-      <svg class="hero-icon-bubble bubble-delay-3" width="29" height="29" viewBox="0 0 29 29"><circle cx="14.5" cy="14.5" r="14.5" fill="#fff"/><g transform="translate(5,7)"><circle cx="9" cy="9" r="8" stroke="#c20000" stroke-width="2" fill="#fafafa"/><rect x="8" y="1" width="2" height="16" fill="url(#toolGradient)"/></g></svg>
+      <!-- Embed the catalog using an iframe -->
+      <iframe class="catalog-embed" src="https://catalogue.quartdetour.net/view/786128227/i/#zoom=true" title="Catalogue" allowfullscreen></iframe>
     </div>
     <div class="content">
       <div class="right-content">
         <div class="incitation">
           Vous êtes <strong>quincaillier</strong>, <strong>revendeur</strong> ou <strong>professionnel passionné&nbsp;?</strong><br>
           <span style="font-weight:bold;color:#ffe8e8;">Contactez Inter Negoce dès maintenant</span> pour booster votre clientèle, accéder à des offres EXCLUSIVES et dynamiser votre business&nbsp;!
-        </div>
-        <div class="gif-container">
-          <!-- Dynamic red animated growth bar chart SVG, matches branding -->
-          <svg viewBox="0 0 370 165" aria-label="Succès entreprise croissance">
-            <rect x="15" y="76" width="49" height="79" rx="10" fill="#fff9f9" stroke="#ed4242" stroke-width="2.5"/>
-            <rect x="80" y="48" width="52" height="107" rx="10" fill="#fff9f9" stroke="#ed4242" stroke-width="2.5"/>
-            <rect x="148" y="25" width="53" height="130" rx="10" fill="#fff9f9" stroke="#ed4242" stroke-width="2.5"/>
-            <rect x="217" y="12" width="53" height="143" rx="10" fill="#fff9f9" stroke="#ed4242" stroke-width="2.5"/>
-            <!-- Animated Bars -->
-            <rect class="bar1" x="15" y="153" width="49" height="0" rx="7" fill="#c20000">
-              <animate attributeName="height" values="0;63" keyTimes="0;1" dur="0.9s" fill="freeze" begin="0.18s"/>
-              <animate attributeName="y" values="153;90" keyTimes="0;1" dur="0.9s" fill="freeze" begin="0.18s"/>
-            </rect>
-            <rect class="bar2" x="80" y="155" width="52" height="0" rx="7" fill="#ed4242">
-              <animate attributeName="height" values="0;93" keyTimes="0;1" dur="1.2s" fill="freeze" begin="0.36s"/>
-              <animate attributeName="y" values="155;62" keyTimes="0;1" dur="1.2s" fill="freeze" begin="0.36s"/>
-            </rect>
-            <rect class="bar3" x="148" y="155" width="53" height="0" rx="7" fill="#c20000">
-              <animate attributeName="height" values="0;114" keyTimes="0;1" dur="1.45s" fill="freeze" begin="0.54s"/>
-              <animate attributeName="y" values="155;41" keyTimes="0;1" dur="1.45s" fill="freeze" begin="0.54s"/>
-            </rect>
-            <rect class="bar4" x="217" y="155" width="53" height="0" rx="7" fill="#ed4242">
-              <animate attributeName="height" values="0;131" keyTimes="0;1" dur="1.7s" fill="freeze" begin="0.72s"/>
-              <animate attributeName="y" values="155;24" keyTimes="0;1" dur="1.7s" fill="freeze" begin="0.72s"/>
-            </rect>
-            <text x="185" y="19" text-anchor="middle" font-size="17" font-weight="bold" fill="#c20000">+ de ventes, + de clients !</text>
-            <text x="22" y="157" font-size="13" fill="#c20000" opacity="0.6">Début</text>
-            <text x="245" y="158" font-size="13" fill="#c20000" opacity="0.6">Succès</text>
-          </svg>
         </div>
         <div class="offer-price">
           PRIX = <del>47€</del> <span style="color:var(--brand-red);font-weight:700;">Offert à durée limitée</span>
@@ -517,16 +234,24 @@
       </div>
     </div>
   </div>
-  <div class="benefits" id="benefits-bloc">
-    <h2>Pourquoi travailler avec Inter Negoce&nbsp;?</h2>
-    <ul>
-      <li><strong>Offres dédiées aux professionnels :</strong> Tarifs et conditions exclusives pour quincailliers &amp; revendeurs.</li>
-      <li><strong>Un accompagnement sur-mesure :</strong> Notre équipe vous aide à dynamiser vos ventes et fidéliser votre clientèle.</li>
-      <li><strong>Produits adaptés au marché :</strong> Sélection axée sur la qualité, le stock et la performance.</li>
-      <li><strong>Réactivité et support personnalisé :</strong> Réponse rapide à toutes vos demandes, contact direct.</li>
-      <li><strong>Large gamme :</strong> Outils, fixations, serrurerie, consommables pros, EPI et bien plus.</li>
-    </ul>
+
+  <!-- Sales Representative Benefits Section -->
+  <div class="sales-benefits">
+    <h2>Pourquoi avoir un commercial à vos côtés&nbsp;?</h2>
+    <div class="benefit-item">
+      <h3>Expertise dédiée</h3>
+      <p>Un commercial formé et spécialisé dans votre secteur pour répondre à vos besoins spécifiques.</p>
+    </div>
+    <div class="benefit-item">
+      <h3>Suivi personnalisé</h3>
+      <p>Un suivi régulier pour optimiser vos commandes et ajuster l'offre à vos besoins.</p>
+    </div>
+    <div class="benefit-item">
+      <h3>Gain de temps</h3>
+      <p>Votre commercial s’occupe de toute la logistique, vous permettant de vous concentrer sur vos ventes.</p>
+    </div>
   </div>
+
   <footer>
     &copy; 2024 Inter Negoce | <a href="https://c-digitalagency.com/">Visitez notre site</a> | 
     <a href="/cdn-cgi/l/email-protection#5e3d362c372d2a312e363b1e3d733a3739372a3f323f393b303d27703d3133">Contactez-nous</a> | 
