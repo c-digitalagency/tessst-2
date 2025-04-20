@@ -24,21 +24,23 @@
     }
     body {
       background-color: var(--grey-light);
-      color: var(--brand-red);
+      color: var(--text-dark);
       line-height: 1.6;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
       overflow-x: hidden;
     }
+
+    /* HEADER */
     header {
       background: var(--text-light);
       border-bottom: 3.5px solid var(--brand-red);
       text-align: center;
       box-shadow: 0 3px 14px rgba(194,0,0,0.06);
       padding: 22px 0 12px 0;
-      z-index: 10;
       position: relative;
+      z-index: 10;
     }
     .header-logo {
       display: flex;
@@ -63,7 +65,7 @@
       font-weight: bold;
       color: var(--brand-red);
       letter-spacing: 1.2px;
-      font-family: 'Helvetica Neue',Arial,sans-serif;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
       text-shadow: 1px 1px 8px rgba(194,0,0,0.07);
     }
     .subtitle {
@@ -81,11 +83,8 @@
       position: relative;
       z-index: 1;
     }
-    h1 {
-      display: none;
-    }
 
-    /* --------- HERO AREA ---------- */
+    /* MAIN CONTENT */
     .main-content {
       display: flex;
       min-height: 420px;
@@ -101,7 +100,7 @@
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      background: linear-gradient(140deg,var(--brand-red-bg) 0%, #fff 85%);
+      background: linear-gradient(140deg, var(--brand-red-bg) 0%, #fff 85%);
       padding: 28px 0 0px 0;
       position: relative;
       overflow: visible;
@@ -112,8 +111,9 @@
       height: 100%;
       border: none;
       border-radius: 0 0 24px 24px;
-      max-width: 1200px; /* Limiter la largeur */
-      margin: 0 auto; /* Centrer */
+      max-width: 1200px;
+      margin: 0 auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     .content {
@@ -144,6 +144,7 @@
       overflow: hidden;
       animation: popin 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     }
+
     /* Mobile responsiveness */
     @media (max-width: 900px) {
       .main-content {
@@ -155,22 +156,31 @@
       .image-container {
         min-width: unset;
         padding: 15px 0 0 0;
-        background: linear-gradient(150deg,var(--brand-red-bg) 0%, #fff 100%);
+        background: linear-gradient(150deg, var(--brand-red-bg) 0%, #fff 100%);
       }
-      .content { padding: 22px 9px 23px 9px; }
-      .right-content { max-width: 100%; }
-      .catalog-embed {
-        height: 500px; /* Ajuster la hauteur sur mobile */
+      .content {
+        padding: 22px 9px 23px 9px;
+      }
+      .right-content {
+        max-width: 100%;
       }
     }
 
     @media (max-width: 600px) {
-      .header-logo { flex-direction: column; gap: 6px;}
-      .header-logo img { height: 34px; margin-bottom: 1.5px;}
-      .header-name { font-size: 18.5px;}
-      .subtitle { font-size: 13.6px; padding: 6px 10px;}
-      .catalog-embed {
-        height: 400px; /* Ajuster la hauteur sur mobile très petit */
+      .header-logo {
+        flex-direction: column;
+        gap: 6px;
+      }
+      .header-logo img {
+        height: 34px;
+        margin-bottom: 1.5px;
+      }
+      .header-name {
+        font-size: 18.5px;
+      }
+      .subtitle {
+        font-size: 13.6px;
+        padding: 6px 10px;
       }
     }
 
@@ -209,6 +219,61 @@
       font-size: 16px;
       color: var(--text-dark);
     }
+
+    /* Footer design */
+    footer {
+      background-color: var(--grey-light);
+      padding: 30px 20px;
+      font-size: 16px;
+      color: var(--text-dark);
+      text-align: center;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+      border-top: 2px solid var(--brand-red);
+      margin-top: 50px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-left {
+      font-size: 14px;
+      color: var(--grey-medium);
+    }
+
+    .footer-links {
+      font-size: 14px;
+    }
+
+    .footer-links a {
+      color: var(--brand-red);
+      text-decoration: none;
+      padding: 0 15px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--brand-red-light);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-left {
+        margin-bottom: 15px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -222,7 +287,6 @@
   </header>
   <div class="main-content">
     <div class="image-container">
-      <!-- Embed the catalog using an iframe -->
       <iframe class="catalog-embed" src="https://catalogue.quartdetour.net/view/786128227/i/#zoom=true" title="Catalogue" allowfullscreen></iframe>
     </div>
     <div class="content">
@@ -260,31 +324,17 @@
   </div>
 
   <footer>
-    &copy; 2024 Inter Negoce | <a href="https://c-digitalagency.com/">Visitez notre site</a> | 
-    <a href="/cdn-cgi/l/email-protection#5e3d362c372d2a312e363b1e3d733a3739372a3f323f393b303d27703d3133">Contactez-nous</a> | 
-    <a href="offre.html">Offre</a>
+    <div class="footer-container">
+      <div class="footer-left">
+        &copy; 2024 Inter Negoce | Tous droits réservés
+      </div>
+      <div class="footer-links">
+        <a href="https://c-digitalagency.com/">Visitez notre site</a> |
+        <a href="/cdn-cgi/l/email-protection#5e3d362c372d2a312e363b1e3d733a3739372a3f323f393b303d27703d3133">Contactez-nous</a> |
+        <a href="offre.html">Offre</a>
+      </div>
+    </div>
   </footer>
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-  <!-- Klaviyo script INLINE - do not touch -->
-  <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=U37jrv'></script>
-  <!-- Scroll/benefits fade-in/animation effect -->
-  <script>
-    // Benefits section fade-in
-    function revealBenefits() {
-      var bene = document.getElementById('benefits-bloc');
-      var sectionTop = bene.getBoundingClientRect().top;
-      var windowBottom = window.innerHeight || document.documentElement.clientHeight;
-      if (sectionTop < windowBottom-40) {
-        bene.classList.add('visible');
-        let list = bene.querySelectorAll("li");
-        list.forEach((li, i) => setTimeout(() => li.classList.add('visible'), 200 + i * 120));
-        window.removeEventListener('scroll', revealBenefits);
-      }
-    }
-    window.addEventListener('scroll', revealBenefits);
-    window.addEventListener('DOMContentLoaded', function() {
-      revealBenefits();
-    });
-  </script>
+
 </body>
 </html>
