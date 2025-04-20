@@ -5,343 +5,510 @@
   <meta name="description" content="Quincailliers, revendeurs et professionnels : boostez votre business avec Inter Negoce. Obtenez plus de clients et augmentez vos ventes grâce à nos solutions dédiées.">
   <title>Boostez votre activité | Inter Negoce</title>
   <style>
-    body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
+    :root {
+      --brand-red: #c20000;
+      --brand-red-light: #ed4242;
+      --brand-red-bg: #ffe8e8;
+      --text-dark: #333;
+      --text-light: #fff;
+      --grey-light: #f4f4f4;
+      --grey-medium: #a2a2a2;
+      --accent-yellow: #ffc600;
+      --accent-blue: #0074d9;
+    }
+    html, body {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background-color: #fff;
-      color: #c20000;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+    body {
+      background-color: var(--grey-light);
+      color: var(--brand-red);
       line-height: 1.6;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      overflow-x: hidden;
     }
-
     header {
-      background-color: #fff;
-      border-bottom: 3px solid #c20000;
-      padding: 24px 0 16px 0;
+      background: var(--text-light);
+      border-bottom: 3.5px solid var(--brand-red);
       text-align: center;
-      box-shadow: 0 2px 10px 0 rgba(194,0,0,0.03);
+      box-shadow: 0 3px 14px rgba(194,0,0,0.06);
+      padding: 22px 0 12px 0;
+      z-index: 10;
+      position: relative;
     }
-
     .header-logo {
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 7px;
       gap: 14px;
+      margin-bottom: 9px;
     }
-
     .header-logo img {
-      height: 56px;
+      height: 49px;
       width: auto;
       display: inline-block;
       background: #fff;
-      border-radius: 7px;
-      box-shadow: 0 1px 12px rgba(194,0,0,0.03);
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(194,0,0,0.07);
+      object-fit: contain;
+      border: 1.5px solid var(--brand-red-bg);
+      padding: 4px;
     }
-
     .header-name {
-      font-size: 34px;
+      font-size: 33px;
       font-weight: bold;
-      color: #c20000;
+      color: var(--brand-red);
       letter-spacing: 1.2px;
       font-family: 'Helvetica Neue',Arial,sans-serif;
-      margin-left: 5px;
-      text-shadow: 1px 1px 8px rgba(194,0,0,0.06);
+      text-shadow: 1px 1px 8px rgba(194,0,0,0.07);
     }
-
+    .subtitle {
+      font-size: 19.5px;
+      margin-top: 6px;
+      background: linear-gradient(90deg, var(--brand-red) 0%, var(--brand-red-light) 100%);
+      color: var(--text-light);
+      display: inline-block;
+      border-radius: 11px;
+      padding: 9px 23px 7px 23px;
+      letter-spacing: .4px;
+      font-weight: 500;
+      box-shadow: 0 3px 14px rgba(194,0,0,.08);
+      border: 2px solid #ed4242;
+      position: relative;
+      z-index: 1;
+    }
     h1 {
       display: none;
     }
 
-    .subtitle {
-      font-size: 23px;
-      margin-top: 4px;
-      font-weight: 300;
-      color: #fff;
-      background: #c20000;
-      border-radius: 8px;
-      display: inline-block;
-      padding: 12px 24px 8px 24px;
-      margin-top: 10px;
-      box-shadow: 0 2.5px 11px rgba(194,0,0,.03);
-      letter-spacing: .4px;
-    }
-
+    /* --------- HERO AREA ---------- */
     .main-content {
       display: flex;
-      min-height: calc(100vh - 180px);
+      min-height: 420px;
       background: #fff;
+      box-shadow: 0 2px 26px rgba(194,0,0,0.04);
+      border-radius: 0 0 24px 24px;
+      overflow: hidden;
+      margin: 0 0 15px 0;
     }
-
     .image-container {
-      flex: 1;
-      background: #fff;
+      flex: 1.1;
+      min-width: 320px;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
-      min-width: 230px;
+      background: linear-gradient(140deg,var(--brand-red-bg) 0%, #fff 85%);
+      padding: 28px 0 0px 0;
+      position: relative;
+      overflow: visible;
     }
-    .image-container svg {
-      max-width: 90%;
+    /* SVG illustration float and bubble animation */
+    .image-container svg#hero-quincaillerie {
+      max-width: 94%;
+      width: 410px;
       height: auto;
-      max-height: 400px;
       display: block;
       margin: 0 auto;
+      filter: drop-shadow(0 6px 18px rgba(0,0,0,0.11));
+      z-index: 0;
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0);}
+      50% { transform: translateY(-16px);}
+      100% { transform: translateY(0);}
+    }
+    /* Animated icons bubble */
+    .hero-icon-bubble {
+      position: absolute;
+      z-index: 1;
+      will-change: transform;
+      opacity: 0.8;
+      pointer-events: none;
+      animation: bubbleUp 7s infinite linear;
+    }
+    .bubble-delay-1 { left: 18%; top: 84%; animation-delay: 0.5s;}
+    .bubble-delay-2 { left: 80%; top: 95%; animation-delay: 2.4s;}
+    .bubble-delay-3 { left: 8%;  top: 72%; animation-delay: 4.1s;}
+    @keyframes bubbleUp {
+      0%   { transform: scale(0.9) translateY(0) rotate(-9deg);}
+      15%  { opacity: 1;}
+      75%  { opacity: 0.58;}
+      100% { transform: scale(1.21) translateY(-85px) rotate(22deg); opacity: 0;}
     }
 
     .content {
-      flex: 1.2;
+      flex: 1.4;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #fff;
-      padding: 40px;
+      background: #fff;
+      padding: 44px 42px 46px 36px;
       text-align: center;
-      border-left: 2px solid #ffe1e1;
     }
-
     .right-content {
-      max-width: 95%;
-      text-align: center;
+      width: 100%;
+      max-width: 490px;
     }
-
     .incitation {
-      color: #fff;
-      background: linear-gradient(90deg,#c20000 0%, #ed4242 80%);
-      padding: 22px 16px;
+      color: var(--text-light);
+      background: linear-gradient(89deg, var(--brand-red) 0%, var(--brand-red-light) 99%);
+      padding: 22px 18px 19px 18px;
       border-radius: 16px;
-      font-size: 21px;
-      font-weight: 600;
-      margin-bottom: 28px;
-      box-shadow: 0 4px 16px rgba(194,0,0,0.09);
-      letter-spacing: .5px;
-      border: 1.5px solid #ed4242;
-      animation: popin 1.4s;
+      font-size: 19.5px;
+      font-weight: 700;
+      margin-bottom: 23px;
+      box-shadow: 0 6px 27px rgba(194,0,0,0.14);
+      border: none;
+      letter-spacing: .4px;
+      position: relative;
+      overflow: hidden;
+      animation: popin 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+    .incitation::after {
+      content: "";
+      position: absolute; left: -60%; top: 0; height: 100%; width: 51%;
+      background: linear-gradient(90deg, transparent, #fff7, transparent);
+      transform: skewX(-28deg);
+      animation: shimmer 7s infinite 0.5s;
+    }
+    @keyframes shimmer {
+      0% { left: -60%;}
+      42% { left: 90%;}
+      100% { left: 90%;}
     }
     @keyframes popin {
-      0% { transform: scale(.92); opacity:0.7;}
-      60% { transform: scale(1.06);}
-      100% { transform: scale(1); opacity: 1;}
+      0% { transform: scale(.95); opacity:0.5;}
+      80% { transform: scale(1.04);}
+      100% { transform: scale(1); opacity:1;}
     }
-
+    .incitation strong {
+      color: var(--accent-yellow);
+      font-weight: 800;
+      letter-spacing: 0.7px;
+      text-shadow: 1px 1px 5px rgba(255,183,56,0.09);
+    }
     .offer-price {
-      font-size: 27px;
+      font-size: 21px;
       margin-bottom: 22px;
-      color: #c20000;
+      color: var(--brand-red);
       font-weight: bold;
+      background: var(--brand-red-bg);
+      padding: 6px 16px;
+      border-radius: 8px;
+      display: inline-block;
+      border: 1px solid var(--brand-red);
     }
-
     .offer-price del {
-      color: #a2a2a2;
-      margin-right: 8px;
+      color: var(--grey-medium);
+      margin-right: 7px;
+      font-weight: normal;
     }
-
+    /* Dynamic Animated Bar Chart */
     .gif-container {
-      margin-bottom: 18px;
+      margin-bottom: 20px;
+      background: #fdfdfd;
+      border-radius: 12px;
+      box-shadow: 0 3px 16px rgba(0,0,0,0.06);
+      border: 1px solid #eee;
+      padding: 24px 12px 8px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow .18s;
     }
-
     .gif-container svg {
       width: 100%;
-      max-width: 410px;
-      max-height: 260px;
+      max-width: 350px;
+      max-height: 185px;
       height: auto;
       display: block;
-      margin: 0 auto;
     }
-
+    /* Bar animation style */
+    .gif-container svg text {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+    /* Klaviyo Form block */
     .form-container {
       width: 100%;
       background-color: #fff;
-      padding: 23px 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 14px rgba(194,0,0,0.07);
-      color: #c20000;
-      margin-bottom: 5px;
-      border: 1.5px solid #c20000;
+      padding: 22px 12px 17px;
+      border-radius: 12px;
+      box-shadow: 0 6px 22px rgba(194,0,0,0.07);
+      color: var(--brand-red);
+      margin-bottom: 8px;
+      border: 1.5px solid #e8bbbb;
+      transition: box-shadow 0.33s;
     }
-
+    .form-container:focus-within {
+      box-shadow: 0 8px 34px rgba(194,0,0,0.17);
+    }
     .form-container h2 {
-      font-size: 24px;
-      margin-bottom: 21px;
-      color: #c20000;
+      font-size: 20.4px;
+      margin-bottom: 17px;
+      color: var(--brand-red);
+      font-weight: 600;
+      letter-spacing: 0.02em;
     }
-
+    /* ----- Benefits / Features -------- */
     .benefits {
-      margin: 28px 0 44px 0;
+      margin: 48px auto 32px auto;
+      max-width: 950px;
       text-align: center;
-      background-color: #ffe8e8;
-      padding: 28px 22px;
-      border-radius: 10px;
-      color: #c20000;
-      border: 1.5px solid #c20000;
-      font-size: 1.05em;
+      background: linear-gradient(98deg, var(--text-light) 0%, var(--brand-red-bg) 100%);
+      padding: 37px 18px 38px 18px;
+      border-radius: 18px;
+      color: var(--text-dark);
+      border: 1.5px solid #f0c0c0;
+      font-size: 1.08em;
+      box-shadow: 0 7px 22px rgba(194,0,0,0.08);
+      transition: box-shadow .2s;
+      /* simple fade-in on scroll animation */
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s cubic-bezier(.68,-0.55,.265,1.55);
     }
-
+    .benefits.visible { opacity: 1; transform: translateY(0);}
     .benefits h2 {
       font-size: 28px;
-      margin-bottom: 20px;
-      color: #c20000;
+      margin-bottom: 30px;
+      color: var(--brand-red);
       font-weight: bold;
-      letter-spacing: .2px;
+      letter-spacing: .13px;
     }
-
     .benefits ul {
       list-style: none;
       padding: 0;
-      max-width: 800px;
+      max-width: 810px;
       margin: 0 auto;
       text-align: left;
     }
-
     .benefits li {
-      margin-bottom: 18px;
-      font-size: 20px;
+      margin-bottom: 24px;
+      font-size: 18.7px;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
+      line-height: 1.48;
+      opacity: 0;
+      transform: translateX(-28px);
+      transition: opacity 0.6s cubic-bezier(.68,-0.55,.265,1.55), transform 0.7s cubic-bezier(.68,-0.55,.265,1.55);
     }
-
+    .benefits li.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .benefits li strong {
+      color: var(--brand-red);
+      font-weight: 600;
+    }
     .benefits li::before {
       content: '';
+      flex-shrink: 0;
       display: inline-block;
-      width: 20px;
-      height: 20px;
-      background: #c20000;
-      mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill=\'%23fff\' viewBox="0 0 24 24"><path d="M9.172 18.828a4 4 0 01-5.656-5.656l7.778-7.778a4 4 0 015.657 5.657l-4.95 4.95"/></svg>') center/contain no-repeat;
+      width: 26px;
+      height: 26px;
+      background: var(--brand-red);
+      mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="currentColor"/><path d="M23 12l-8.06 8-3.94-4" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/contain no-repeat;
       margin-right: 14px;
+      margin-top: 1px;
+      opacity: 0.89;
     }
-
     footer {
-      background-color: #c20000;
-      color: #fff;
-      padding: 20px 10px;
+      background-color: var(--brand-red);
+      color: var(--text-light);
+      padding: 22px 8px 19px 8px;
       text-align: center;
-      font-size: 16px;
+      font-size: 15px;
       margin-top: auto;
-      box-shadow: 0 -2px 8px rgba(0,0,0,0.06);
+      box-shadow: 0 -2.5px 12px rgba(0,0,0,0.11);
+      border-radius: 14px 14px 0 0;
     }
-
     footer a {
-      color: #fff;
-      text-decoration: underline;
-      transition: color .18s;
+      color: #ffdada;
+      text-decoration: none;
+      margin: 0 7px;
+      border-bottom: 1px dotted transparent;
+      transition: color .21s, border-bottom .18s;
     }
-
     footer a:hover {
-      color: #ffe8e8;
+      color: var(--text-light);
+      border-bottom: 1px dotted var(--text-light);
     }
-
+    /* --------------------------------- */
     @media (max-width: 900px) {
       .main-content {
         flex-direction: column;
-        background: #fff;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
       }
-
       .image-container {
-        display: none;
+        min-width: unset;
+        padding: 15px 0 0 0;
+        background: linear-gradient(150deg,var(--brand-red-bg) 0%, #fff 100%);
       }
-
-      .content {
-        max-width: 100%;
-        margin-right: 0;
-        margin-top: 20px;
-        padding: 18px 5px 22px 5px;
-        background-color: #fff;
-        border-left: none;
+      .image-container svg#hero-quincaillerie {
+        width: 87vw;
+        max-width: 330px;
+        margin: 0 auto;
       }
-      .form-container {
-        max-width: 100%;
-        margin: 18px auto 30px auto;
-        padding: 14px 5px;
+      .hero-icon-bubble {
+        width: 36px !important;
+        height: 36px !important;
       }
+      .content { padding: 22px 9px 23px 9px; }
+      .right-content { max-width: 100%;}
+      .form-container { padding: 11px 0 16px;}
       .benefits {
-        margin-top: 30px;
-        padding: 18px 4vw;
+        margin: 32px 0 22px 0;
+        border-radius: 12px;
+        padding: 21px 7vw 21px 6vw;
       }
-      .header-logo img {
-        height: 38px;
-      }
-      .header-name {
-        font-size: 23px;
-      }
-      .incitation {
-        font-size: 18px;
-        padding: 13px 4vw;
-      }
+      .benefits h2 { font-size: 21px;}
+      .benefits li { font-size: 16px;}
+      .offer-price { font-size: 15.7px;}
+      .incitation { font-size: 16px; padding: 15px 7px 13px;}
+    }
+    @media (max-width: 600px) {
+      .header-logo { flex-direction: column; gap: 6px;}
+      .header-logo img { height: 34px; margin-bottom: 1.5px;}
+      .header-name { font-size: 18.5px;}
+      .subtitle { font-size: 13.6px; padding: 6px 10px;}
     }
   </style>
   <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '525559826673299');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=525559826673299&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '525559826673299');
+  fbq('track', 'PageView');
+  </script>
+  <noscript>
+  <img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=525559826673299&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
   <header>
     <div class="header-logo">
-      <img src="Inter Negoce.png" alt="" />
+      <img src="Inter Negoce.png" alt="Logo" />
       <span class="header-name"></span>
     </div>
-    <div class="subtitle">Solutions pour Quincailliers, Revendeurs & Professionnels exigeants</div>
-    <h1></h1>
+    <div class="subtitle">Solutions pour Quincailliers, Revendeurs &amp; Professionnels exigeants</div>
+    <h1>Inter Negoce - Accélérateur pour quincaillerie professionnelle</h1>
   </header>
-
   <div class="main-content">
-  <div class="image-container">
-  <a href="Photo C-Digital Agency.PNG">
-    <img src="Photo C-Digital Agency.PNG" alt="Image C-Digital Agency" style="max-width: 90%; height: auto; max-height: 400px; display: block; margin: 0 auto;">
-  </a>
-</div>
+    <div class="image-container">
+      <!-- Hero SVG Illustration : Quincaillerie Pro + ambiance visuelve -->
+      <svg id="hero-quincaillerie" viewBox="0 0 420 260" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="toolGradient" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#c20000"/>
+            <stop offset="100%" stop-color="#ed4242"/>
+          </linearGradient>
+          <linearGradient id="metal" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0%" stop-color="#b0b0b0"/>
+            <stop offset="100%" stop-color="#f7f7f7"/>
+          </linearGradient>
+        </defs>
+        <!-- Modern counter/workbench -->
+        <rect x="50" y="122" width="320" height="47" rx="12" fill="url(#metal)" stroke="#c20000" stroke-width="3"/>
+        <!-- Tools: hammer -->
+        <g>
+          <rect x="95" y="62" width="22" height="60" rx="7" fill="url(#toolGradient)" />
+          <rect x="88" y="52" width="36" height="18" rx="7" fill="#dedede" stroke="#bbb" stroke-width="1"/>
+          <rect x="93" y="58" width="26" height="7" rx="2.9" fill="#c20000" opacity="0.16"/>
+        </g>
+        <!-- Tools: wrench -->
+        <g transform="translate(150,68) rotate(18)">
+          <rect x="0" y="0" width="15" height="54" rx="6" fill="url(#toolGradient)"/>
+          <ellipse cx="7.5" cy="8" rx="7" ry="7" fill="#dadada" stroke="#c20000" stroke-width="1"/>
+          <ellipse cx="7.5" cy="46" rx="7" ry="7" fill="#dadada" stroke="#c20000" stroke-width="1"/>
+        </g>
+        <!-- Toolbox -->
+        <rect x="250" y="100" width="50" height="30" rx="6" fill="#fff4f4" stroke="#c20000" stroke-width="2"/>
+        <rect x="263" y="95" width="24" height="12" rx="4" fill="#ed4242"/>
+        <!-- Gear Wheel -->
+        <g transform="translate(260,190)">
+          <circle r="23" fill="url(#toolGradient)" opacity="0.22"/>
+          <circle r="14" fill="#fff" stroke="#c20000" stroke-width="2"/>
+          <!-- gear branches -->
+          <g>
+            <rect x="-3" y="-26" width="6" height="13" fill="#c20000"/>
+            <rect x="-3" y="13" width="6" height="13" fill="#ed4242"/>
+            <rect x="13" y="-3" width="13" height="6" fill="#c20000"/>
+            <rect x="-26" y="-3" width="13" height="6" fill="#ed4242"/>
+            <rect x="10" y="10" width="7" height="6" fill="#c20000" transform="rotate(45 14 13)"/>
+            <rect x="-17" y="-16" width="7" height="6" fill="#ed4242" transform="rotate(-45 -14 -13)"/>
+          </g>
+        </g>
+        <!-- Wood plank for mood -->
+        <rect x="53" y="168" width="85" height="13" rx="4" fill="#ffc600" opacity="0.16" />
+        <!-- Label Bulle -->
+        <rect x="67" y="22" width="106" height="32" rx="14" fill="#fff" stroke="#c20000" stroke-width="2.2"/>
+        <text x="120" y="42" fill="#c20000" font-size="16" font-family="Helvetica Neue, Arial,sans-serif" text-anchor="middle" font-weight="bold">Quincaillerie PRO</text>
+        <!-- Some fun dots and sparkle -->
+        <circle cx="310" cy="45" r="4.3" fill="#ed4242" opacity="0.9"/>
+        <circle cx="328" cy="40" r="2.7" fill="#ed4242" opacity="0.45"/>
+        <rect x="144" y="170" width="16" height="11" rx="3" fill="#ed4242"/>
+        <!-- Star Sparkle -->
+        <g>
+          <polygon points="362,72 364.6,77.2 370.7,77.7 366,81.5 367.3,87.6 362,84.3 356.7,87.6 358,81.5 353.3,77.7 359.4,77.2" fill="#ffc600" opacity="0.65"/>
+        </g>
+      </svg>
+      <!-- Animated dynamic "floating" tool icon bubbles -->
+      <svg class="hero-icon-bubble bubble-delay-1" width="41" height="41" viewBox="0 0 41 41"><circle cx="20.5" cy="20.5" r="20.5" fill="#fff"/><g transform="translate(9,10)"><rect x="8" width="5" height="19" rx="2.2" fill="url(#toolGradient)"/><rect x="0" y="3" width="20" height="4" rx="2" fill="#ddd" stroke="#c20000" stroke-width="1"/></g></svg>
+      <svg class="hero-icon-bubble bubble-delay-2" width="34" height="34" viewBox="0 0 34 34"><circle cx="17" cy="17" r="17" fill="#fff"/><g transform="translate(7,7)"><ellipse cx="8" cy="6" rx="8" ry="6" fill="#dadada" stroke="#c20000" stroke-width="1"/><rect y="4" width="16" height="6" rx="3" fill="url(#toolGradient)" /></g></svg>
+      <svg class="hero-icon-bubble bubble-delay-3" width="29" height="29" viewBox="0 0 29 29"><circle cx="14.5" cy="14.5" r="14.5" fill="#fff"/><g transform="translate(5,7)"><circle cx="9" cy="9" r="8" stroke="#c20000" stroke-width="2" fill="#fafafa"/><rect x="8" y="1" width="2" height="16" fill="url(#toolGradient)"/></g></svg>
+    </div>
     <div class="content">
       <div class="right-content">
         <div class="incitation">
-          Vous êtes quincaillier, revendeur ou professionnel ?<br>
-          <span style="color:#ffe8e8;font-weight:bold;">Contactez Inter Negoce dès maintenant</span> pour développer votre clientèle, bénéficier d'offres spéciales et booster votre activité&nbsp;!
+          Vous êtes <strong>quincaillier</strong>, <strong>revendeur</strong> ou <strong>professionnel passionné&nbsp;?</strong><br>
+          <span style="font-weight:bold;color:#ffe8e8;">Contactez Inter Negoce dès maintenant</span> pour booster votre clientèle, accéder à des offres EXCLUSIVES et dynamiser votre business&nbsp;!
         </div>
         <div class="gif-container">
-          <!-- Simple red growing bar chart SVG animation to fit the branding and inciter -->
-          <svg viewBox="0 0 400 210" aria-label="Succès entreprise croissance">
-            <rect x="25" y="98" width="58" height="87" rx="11" fill="#fff" stroke="#c20000" stroke-width="5"/>
-            <rect x="106" y="73" width="60" height="113" rx="11" fill="#fff" stroke="#c20000" stroke-width="5"/>
-            <rect x="190" y="40" width="60" height="146" rx="11" fill="#fff" stroke="#c20000" stroke-width="5"/>
-            <rect x="275" y="15" width="60" height="171" rx="11" fill="#fff" stroke="#c20000" stroke-width="5"/>
-            <rect class="bar1" x="25" y="185" width="58" height="0" rx="8" fill="#c20000">
-              <animate attributeName="height" values="0;79" keyTimes="0;1" dur="1.1s" fill="freeze"/>
-              <animate attributeName="y" values="185;106" keyTimes="0;1" dur="1.1s" fill="freeze"/>
+          <!-- Dynamic red animated growth bar chart SVG, matches branding -->
+          <svg viewBox="0 0 370 165" aria-label="Succès entreprise croissance">
+            <rect x="15" y="76" width="49" height="79" rx="10" fill="#fff9f9" stroke="#ed4242" stroke-width="2.5"/>
+            <rect x="80" y="48" width="52" height="107" rx="10" fill="#fff9f9" stroke="#ed4242" stroke-width="2.5"/>
+            <rect x="148" y="25" width="53" height="130" rx="10" fill="#fff9f9" stroke="#ed4242" stroke-width="2.5"/>
+            <rect x="217" y="12" width="53" height="143" rx="10" fill="#fff9f9" stroke="#ed4242" stroke-width="2.5"/>
+            <!-- Animated Bars -->
+            <rect class="bar1" x="15" y="153" width="49" height="0" rx="7" fill="#c20000">
+              <animate attributeName="height" values="0;63" keyTimes="0;1" dur="0.9s" fill="freeze" begin="0.18s"/>
+              <animate attributeName="y" values="153;90" keyTimes="0;1" dur="0.9s" fill="freeze" begin="0.18s"/>
             </rect>
-            <rect class="bar2" x="106" y="186" width="60" height="0" rx="8" fill="#c20000">
-              <animate attributeName="height" values="0;95" keyTimes="0;1" dur="1.4s" fill="freeze"/>
-              <animate attributeName="y" values="186;91" keyTimes="0;1" dur="1.4s" fill="freeze"/>
+            <rect class="bar2" x="80" y="155" width="52" height="0" rx="7" fill="#ed4242">
+              <animate attributeName="height" values="0;93" keyTimes="0;1" dur="1.2s" fill="freeze" begin="0.36s"/>
+              <animate attributeName="y" values="155;62" keyTimes="0;1" dur="1.2s" fill="freeze" begin="0.36s"/>
             </rect>
-            <rect class="bar3" x="190" y="186" width="60" height="0" rx="8" fill="#c20000">
-              <animate attributeName="height" values="0;113" keyTimes="0;1" dur="1.7s" fill="freeze"/>
-              <animate attributeName="y" values="186;73" keyTimes="0;1" dur="1.7s" fill="freeze"/>
+            <rect class="bar3" x="148" y="155" width="53" height="0" rx="7" fill="#c20000">
+              <animate attributeName="height" values="0;114" keyTimes="0;1" dur="1.45s" fill="freeze" begin="0.54s"/>
+              <animate attributeName="y" values="155;41" keyTimes="0;1" dur="1.45s" fill="freeze" begin="0.54s"/>
             </rect>
-            <rect class="bar4" x="275" y="186" width="60" height="0" rx="8" fill="#c20000">
-              <animate attributeName="height" values="0;139" keyTimes="0;1" dur="2s" fill="freeze"/>
-              <animate attributeName="y" values="186;47" keyTimes="0;1" dur="2s" fill="freeze"/>
+            <rect class="bar4" x="217" y="155" width="53" height="0" rx="7" fill="#ed4242">
+              <animate attributeName="height" values="0;131" keyTimes="0;1" dur="1.7s" fill="freeze" begin="0.72s"/>
+              <animate attributeName="y" values="155;24" keyTimes="0;1" dur="1.7s" fill="freeze" begin="0.72s"/>
             </rect>
-            <text x="200" y="24" text-anchor="middle" font-size="17" font-weight="bold" fill="#c20000">Développez vos ventes !</text>
-            <text x="35" y="202" font-size="15" fill="#c20000" opacity="0.8">Début</text>
-            <text x="288" y="202" font-size="15" fill="#c20000" opacity="0.8">Succès</text>
+            <text x="185" y="19" text-anchor="middle" font-size="17" font-weight="bold" fill="#c20000">+ de ventes, + de clients !</text>
+            <text x="22" y="157" font-size="13" fill="#c20000" opacity="0.6">Début</text>
+            <text x="245" y="158" font-size="13" fill="#c20000" opacity="0.6">Succès</text>
           </svg>
         </div>
         <div class="offer-price">
-          PRIX = <del>47€</del> Offert à durée limitée
+          PRIX = <del>47€</del> <span style="color:var(--brand-red);font-weight:700;">Offert à durée limitée</span>
         </div>
         <div class="form-container">
           <h2>Obtenez nos offres pros</h2>
@@ -350,21 +517,42 @@ src="https://www.facebook.com/tr?id=525559826673299&ev=PageView&noscript=1"
       </div>
     </div>
   </div>
-
-  <div class="benefits">
-    <h2>Pourquoi travailler avec Inter Negoce ?</h2>
+  <div class="benefits" id="benefits-bloc">
+    <h2>Pourquoi travailler avec Inter Negoce&nbsp;?</h2>
     <ul>
-      <li><strong>Offres dédiées aux professionnels :</strong> Tarifs et conditions exclusives pour les quincaillers & revendeurs.</li>
-      <li><strong>Un accompagnement proactif :</strong> Notre équipe vous aide à dynamiser vos ventes et à fidéliser votre clientèle.</li>
-      <li><strong>Des produits adaptés à votre marché :</strong> Sélection axée sur la qualité et la performance.</li>
-      <li><strong>Support rapide et personnalisé :</strong> Réponse efficace à toutes vos demandes, avec un contact direct.</li>
+      <li><strong>Offres dédiées aux professionnels :</strong> Tarifs et conditions exclusives pour quincailliers &amp; revendeurs.</li>
+      <li><strong>Un accompagnement sur-mesure :</strong> Notre équipe vous aide à dynamiser vos ventes et fidéliser votre clientèle.</li>
+      <li><strong>Produits adaptés au marché :</strong> Sélection axée sur la qualité, le stock et la performance.</li>
+      <li><strong>Réactivité et support personnalisé :</strong> Réponse rapide à toutes vos demandes, contact direct.</li>
+      <li><strong>Large gamme :</strong> Outils, fixations, serrurerie, consommables pros, EPI et bien plus.</li>
     </ul>
   </div>
-
   <footer>
-    &copy; 2023 Inter Negoce | <a href="https://c-digitalagency.com/">Visitez notre site</a> | <a href="/cdn-cgi/l/email-protection#5e3d362c372d2a312e363b1e3d733a3739372a3f323f393b303d27703d3133">Contactez-nous</a> | <a href="offre.html">Offre</a>
+    &copy; 2024 Inter Negoce | <a href="https://c-digitalagency.com/">Visitez notre site</a> | 
+    <a href="/cdn-cgi/l/email-protection#5e3d362c372d2a312e363b1e3d733a3739372a3f323f393b303d27703d3133">Contactez-nous</a> | 
+    <a href="offre.html">Offre</a>
   </footer>
-
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=U37jrv'></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <!-- Klaviyo script INLINE - do not touch -->
+  <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=U37jrv'></script>
+  <!-- Scroll/benefits fade-in/animation effect -->
+  <script>
+    // Benefits section fade-in
+    function revealBenefits() {
+      var bene = document.getElementById('benefits-bloc');
+      var sectionTop = bene.getBoundingClientRect().top;
+      var windowBottom = window.innerHeight || document.documentElement.clientHeight;
+      if (sectionTop < windowBottom-40) {
+        bene.classList.add('visible');
+        let list = bene.querySelectorAll("li");
+        list.forEach((li, i) => setTimeout(() => li.classList.add('visible'), 200 + i * 120));
+        window.removeEventListener('scroll', revealBenefits);
+      }
+    }
+    window.addEventListener('scroll', revealBenefits);
+    window.addEventListener('DOMContentLoaded', function() {
+      revealBenefits();
+    });
+  </script>
 </body>
 </html>
